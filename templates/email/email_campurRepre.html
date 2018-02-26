@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Verify youreself </title>
+  {% load staticfiles %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/temp.css' %}">
+</head>
+<body>
+<strong><h4>{{ name }}</h4></strong>
+{% if caution %}
+  <p> It seems you already registered as campus representative. If you try to register again your application will be declined.
+    We will save your prior information provided by you to our database however if you want this details to be saved them email <br>
+    us to the below provided email with your details.
+  </p>
+{%else%}
+<p>Thank You for registering for campus representative of technovate from {{ institute }}. Now you will receive further <br>
+  information from us to your email also you can contact to us on behalf of your institute.
+</p>
+<br>
+{% endif %}
+With Regards <br>
+Team Technovate <br>
+
+<p>For any other querries email us at technovate.iiitnr@gmail.com or technovate@iiitnr.edu.in</p>
+</p>
+</body>
+</html>

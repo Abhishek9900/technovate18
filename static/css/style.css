@@ -1,0 +1,368 @@
+#navbar-logo-official{
+  margin-left: 10px;
+  width: auto;
+  height: 65px;
+ }
+
+#title{
+  width: 100%;
+  height: 96%;
+  background-color: rgb(0, 66, 128);
+}
+#nav-shade{
+  background-color: rgb(0, 66, 128);
+}
+#events{
+  width: 100%;
+  height: auto;
+}
+#about{
+  width: 100%;
+  height: auto;
+  background-color: rgb(243, 65, 65);
+}
+.about-title{
+	font-size:2.3em;
+}
+.about{
+    font-size:1.8em;
+    text-align: justify;
+}
+#sponsorship{
+  width: 100%;
+  height: auto;
+}
+#team{
+  width: 100%;
+  margin-top:-20px;
+  height: auto;
+}
+#registration-and-login{
+  width: 100%;
+  height: 50%;
+}
+.my-footer{
+  margin-top: -20px;
+}
+#loading-container{
+  background-color: rgb(0, 66, 128);
+  width: 100%;
+  height: 100%;
+}
+#loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 200px;
+  height: 200px;
+
+  margin-top: -100px;
+  margin-left: -100px;
+}
+#message{
+  font-size:3.5em;
+}
+#landing {
+  margin-top: 220px; 
+  display: none;
+  text-align: center; 
+} 
+
+/* The dot */
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+
+  width: 160px;
+  height: 100px;
+
+  margin-top: -50px;
+  margin-left: -80px;
+
+  border-radius: 5px;
+
+  background-color: #1e3f57;
+
+  transform-type: preserve-3d;
+
+  animation: dot1 3s cubic-bezier(.55,.3,.24,.99) infinite;
+}
+
+.dot:nth-child(2) {
+  z-index: 11;
+
+  width: 150px;
+  height: 90px;
+
+  margin-top: -45px;
+  margin-left: -75px;
+
+  border-radius: 3px;
+
+  background-color: #3c617d;
+
+  animation-name: dot2;
+}
+
+.dot:nth-child(3) {
+  z-index: 12;
+
+  width: 40px;
+  height: 20px;
+
+  margin-top: 50px;
+  margin-left: -20px;
+
+  border-radius: 0 0 5px 5px;
+
+  background-color: #6bb2cd;
+
+  animation-name: dot3;
+}
+
+@keyframes dot1 {
+  3%, 97% {
+    width: 160px;
+    height: 100px;
+
+    margin-top: -50px;
+    margin-left: -80px;
+  }
+  30%, 36% {
+    width: 80px;
+    height: 120px;
+
+    margin-top: -60px;
+    margin-left: -40px;
+  }
+  63%, 69% {
+    width: 40px;
+    height: 80px;
+
+    margin-top: -40px;
+    margin-left: -20px;
+  }
+}
+
+@keyframes dot2 {
+  3%, 97% {
+    width: 150px;
+    height: 90px;
+
+    margin-top: -45px;
+    margin-left: -75px;
+  }
+  30%, 36% {
+    width: 70px;
+    height: 96px;
+
+    margin-top: -48px;
+    margin-left: -35px;
+  }
+  63%, 69% {
+    width: 32px;
+    height: 60px;
+
+    margin-top: -30px;
+    margin-left: -16px;
+  }
+}
+
+@keyframes dot3 {
+  3%, 97% {
+    width: 40px;
+    height: 20px;
+
+    margin-top: 50px;
+    margin-left: -20px;
+  }
+  30%, 36% {
+    width: 8px;
+    height: 8px;
+
+    margin-top: 49px;
+    margin-left: -5px;
+
+    border-radius: 8px;
+  }
+  63%, 69% {
+    width: 16px;
+    height: 4px;
+
+    margin-top: -37px;
+    margin-left: -8px;
+
+    border-radius: 10px;
+  }
+}
+
+
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.event-image-mobile{
+  max-width: 50%;
+  max-height: 50%;
+  padding-top: 10px;
+
+}
+.event-mobile{
+  position: absolute;
+
+}
+.mobile-event-des{
+  height: 100%;
+  width: 0;
+  background-color: #94b7a9;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+.mobile-event-des .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.my-btn-i{
+	position:fixed;right:5px;bottom:13px;padding-top:15px;margin-bottom:0;z-index:0;margin-top: 2px;font-size: 1.2em;
+}
+.my-btn-f{
+	position:fixed;right:5px;bottom:53px;padding-top:15px;margin-bottom:0;z-index:0;font-size: 1.2em;
+}
+.my-btn-email{
+	position:fixed;left:5px;bottom:53px;padding-top:15px;margin-bottom:0;z-index:998;font-size: 1.2em;
+}
+.my-btn-why{
+	position: fixed;left: 5px;bottom: 53px;padding-top: 15px;margin-bottom: -41px;z-index:0;font-size: 1.2em;
+}
+.my-btn-reach-us{
+  position: fixed;left: 5px;bottom: 133px;padding-top: 15px;margin-bottom: -41px;z-index:0;font-size: 1.2em;
+}
+/* loader */
+
+/*end loader css*/
+#particles-js{ position:absolute; width: 100%; height: 100%;
+
+}
+#myT{
+	display: none;
+}
+html{
+  overflow: initial;
+}
+.nav-logo-technovate{
+	height: 75px;
+  width: 240px;
+  display: block;
+}
+.barner{
+  padding: 2px 2px 2px 2px;
+  margin-top: -30px;
+  height: 180px;
+
+}
+.main-index-image{
+  max-width:65%;
+  max-height:540px;
+}
+#no-of-tema{
+  display: none
+}
+
+
+.my-reg-button{
+  position: fixed;
+  bottom: 30%;
+  left:36%;
+  margin-bottom:0;
+}
+
+
+
+
+@-webkit-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@-moz-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@-ms-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@-o-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+.about-title{
+	font-size:2.3em;
+}
+.about{
+    font-size:1.9em;
+    text-align: justify;
+}
+.event-details{
+  font-size:1.5em;
+}
+.event-title{
+	font-size: 2em;
+}
+#celeb{
+  display: none;
+}
+.acc-desc{
+  padding: 15px 15px 15px 15px;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  overflow:initial;
+  transition: 0.2s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  overflow: initial;
+}
+@media screen and (max-width:640px){
+  .acc-desc{
+  padding: 15px 15px 15px 15px;
+  height: auto;
+  width: 100%;
+  background: #716B66;
+  overflow:initial;
+  transition: 0.2s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  }
+  .main-index-image{
+  max-width:100%;
+  max-height: auto;
+  }
+}

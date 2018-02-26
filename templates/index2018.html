@@ -1,0 +1,553 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        {% load staticfiles %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="google-site-verification" content="dUNPN7T1Go6XOejHUkIMGa8xMbATU-u4rmVXqMq-z6E" />
+        <meta name="description" content="TechNovate is central India's largest techno-cultural fest organized by students of IIIT-Naya Raipur. It is national level encompassment of Technical and Cultural events. Last year it was attended by more than 500 students from different colleges in India. This time we are back with more challenges and ideas that will change world. With wide number of events encompassing various recent domains of engineering is great platform to demonstrate your talent."/>
+        <meta name="keywords" content="technovate, Technovate, Technovate IIITNR,tecnical Festival, IIIT-NR ,tech fest"/>
+        <meta name="email" content="technovate@iiitnr.ac.in">
+        <meta name="title" content="Technovate 2018 - IIIT-NR | Central India's Largest Techno-Cultural Festival"/>
+        <link rel="icon" href="{% static "T18.png"%}">
+
+        <meta property="og:image" content="{% static 'preview_op_technovate2018.png'%}"/>
+        <meta property="og:title" content="Technovate 2018 - IIIT-NR | Central India's Largest Techno-Cultural Festival"/>
+        <meta property="og:description" content="TechNovate is central India's largest techno-cultural fest organized by students of IIIT-Naya Raipur. It is national level encompassment of Technical and Cultural events. Last year it was attended by more than 500 students from different colleges in India. This time we are back with more challenges and ideas that will change world. With wide number of events encompassing various recent domains of engineering is great platform to demonstrate your talent."/>
+        <meta property="og:url" content="http://technovat.iiitnr.ac.in"/>
+        <title>Technovate 2018 - IIIT-NR | Central India's Largest Techno-Cultural Festival </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        <link rel="stylesheet" href="{% static "css/materialize.min.css"%}">
+        <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="{% static 'js/jquery.js'%}"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+        <script src="{% static 'js/materialize.min.js'%}"></script>
+        
+        <script>
+            $(window).on('load',function () {
+                $('#loader').fadeOut("slow");
+                
+                $('#landing').css('display',"block");
+            });
+            $(document).ready(function(){
+                $(function(){
+                    $(".typed").typed({
+                    strings: ["Create Innovate Technovate "],
+                    typeSpeed: 1,
+                    loop: true,
+                    backDelay: 1000
+                    });
+                });
+                $('#greet').click(function(){
+                    $('#landing').css('display',"none");
+                    $('#landing-container').css('display', 'none');
+                    $('#myT').fadeIn(5000);
+                });
+                $("a").on('click', function(event) {
+                    $('.button-collapse').sideNav('hide');
+                        if (this.hash !== "") {
+                        event.preventDefault();
+                        var hash = this.hash;
+                         
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function(){
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="landing-container">
+            <div id="loader">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div id="landing">
+                <center>
+                        <div id="message">
+                                <span class="typed"></span>
+                            </div>
+                            <a href="#" id="greet" class="btn waves-effect waves grey darken-3">Explore</a>
+                </center>
+            </div>
+        </div>
+        <div id="myT">
+            <nav id="nav-shade">
+                <div class="nav-wrapper container">
+                    <a href="#" class="brand-logo black-text hide-on-med-and-down"><img class="brand-logo" id ="navbar-logo-official" src="{% static 'logo_mini.png' %}"></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse white-text"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#about" class="white-text">About</a></li>
+                        <li><a href="#events" class="white-text">Events</a></li>
+                        <li><a href="#sponsorship" class="white-text">Sponsorship</a></li>
+                        <li><a href="#team" class="white-text">Organizers</a></li>
+                        <li><a href="#" class="whte-text">Registration</a></li>                   
+                    </ul>
+                    <ul id="mobile-demo" class="side-nav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#sponsorship">Sponsorship</a></li>
+                        <li><a href="#team">Organizers</a></li>
+                        <li><a href="#">Registration</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="title">
+                <center><img src="{% static 'new_baner.png'%}" id="main" class="main-index-image"></center>
+                <center><h4 class="white-text">10<sup>th</sup> and 11<sup>th</sup> March 2018</h4></center>
+                <center><h5 class="white-text">International Institute of Information Technology, Naya Raipur</h5></center>
+            </div>   
+            <div class="my-btn-email hide-on-med-and-down">
+                    <a class="tooltipped btn btn-waves waves grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Way to IIITNR" href="https://www.google.com/maps/dir/Current+Location/IIIT-NR" target="_blank"><i class="material-icons left">directions</i>Reach Us</a>
+            </div>
+            <div class="my-btn-f">
+                    <a href="#contact_modal" class="modal-trigger hoverable waves-effect waves-light btn grey darken-3">CONTACT US <i class="material-icons right">info_outline</i></a>
+            </div> 
+            <div class="my-btn-why privacy-policy hide-on-small-only">
+                    <a class="hoverable waves-effect waves-light btn grey darken-3" href="#"><i class="material-icons left">import_contacts</i>Privacy and Disclaimer</a>
+            </div>
+            <div id="why"class="my-btn-i">
+                    <a class="hoverable waves-effect waves-light btn grey darken-3" target="_blank" href="{% static 'documents/IIIT_NR_Technovate_Sponsorship.pdf'%}"><i class="material-icons right">monetization_on</i>Sponsorship Brochure</a>
+            </div>
+            <div id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <h3 class="white-text center">Technovate</h3>
+                            <br>
+                            <p class="white-text about">
+                                Technovate was only born last year and all the work put in already made it Central India's largest techno-cultural fest receiving eager and diverse participation from all over the nation and this year we seek no less.
+                                Technovate 2k17 was a joyride of cultural and technical challenges brewing fast paced, tense competiton among participants as their skills were put through the most interesting tests ranging from coding challenges, robotics, drone challenges to journalism, dance and gaming.
+                                Now it's time for Technovate 2.0.<br><br><br><br><br><br>
+                            </p><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="events">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <h4 class="grey-text center">Tech Events</h4>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/app.png'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Persuit of Appieness <i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Persuit of Appieness<i class="material-icons right">close</i></span>
+                                    <p>
+                                        Persuit of appieness is App development event for both iOS and Android. For a given problem statement you need to develop an app (platform you a free to choose) and after several rounds of top 5 will showcase them in Technovate.
+                                        <br>
+                                        <h5>Stages:-</h5>
+                                        <ul>
+                                            <li>Abstract submission</li>
+                                            <li>Presentation of internal working and flow</li>
+                                            <li>Working Demo</li>
+                                        </ul>
+                                        <br>
+                                        Rules and problem statement will be announced 1st week of February and can be downloaded from here.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/goc.png'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Game of Codes <i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Game of Codes<i class="material-icons right">close</i></span>
+                                    <p>
+                                        Sick of all the coding competitions where someone more experienced than you takes away the reward, at game of codes, that is not the case, join us in a competition aimed solely at school students and first year students, make sure you carry your id’s for this one.
+                                        <br><br>
+                                        Rules and problem statement will be announced 1st week of February and can be downloaded from here.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/backyard_data_science.jpg'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Backyard Data Science<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Backyard Data Science<i class="material-icons right">close</i></span>
+                                    <p>
+                                        Machine learning & data science are now hot topic in industries. With machine learning and data science now almost everything is possible. Almost everywhere ML is applied. This competetion is about using dataset provided and do analyis and prediction.
+                                        <br><br>
+                                        Rules and problem statement will be announced 1st week of February and can be downloaded from here.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/hdu.png'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Hack D Unhackd' <i class="material-icons right">more_vert</i></span>
+                                    
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Hack D Unhackd'<i class="material-icons right">close</i></span>
+                                    <p>
+                                        We are proud to announce a unqiue hackathon, Hack D UnhackD' where anyone can participate. Hack D UnhackD' is organized by students of IIIT-Naya Raipur. Aim of this event is to serve the development of both programming and hardware community by exploiting the potential of young and worthy developers. A well experieced to newbei both can take advantage of this platform to learn, build, and create stuff from scratch.
+                                        Visit website: <a href="https://hackdunhackd.github.io" target="_blank"> Hack D Unhackd'</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/DRONE2.png'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Flying Syndrome<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Flying Syndrome<i class="material-icons right">close</i></span>
+                                    <p>
+                                        We will update soon.
+                                    </p>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/Robo_Rash.jpg'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Robo Rash<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Robo Rash<i class="material-icons right">close</i></span>
+                                    <p>
+                                        We will update soon.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/robo_dangal.png'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Robo Dangal<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Robo Dangal<i class="material-icons right">close</i></span>
+                                    <p>
+                                        We will update soon.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/wws.jpg'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Wolf of Web Street<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Wolf of Web Street<i class="material-icons right">close</i></span>
+                                    <p>
+                                            We will update soon.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row">
+                        <center>
+                            <h4 class="grey-text">Non-Tech Events</h4>
+                        </center>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/TREASURE.png'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Treasure Hunt<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Treasure Hunt<i class="material-icons right">close</i></span>
+                                    <p>
+                                            We will update soon.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/fire_in_hole.png'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Counter Strike<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Counter Strike<i class="material-icons right">close</i></span>
+                                    <p>
+                                            We will update soon.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/fifa4.png'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Fifa'17<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Fifa'17<i class="material-icons right">close</i></span>
+                                    <p>
+                                            We will update soon.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/NATAK.png'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Nukkad Natak<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Nukkad Natak<i class="material-icons right">close</i></span>
+                                    <p>
+                                            We will update soon.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="col s12 m12 l4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{%static 'event_logo/footloose.jpg'%}">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Footloose<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Nukkad Natak<i class="material-icons right">close</i></span>
+                                    <p>
+                                        Here is some more information about this product that is only revealed once clicked on.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div id="sponsorship" class="orange darken-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <center><h4 class="white-text">Previous Sponsors</h4></center>
+                        </div>
+                        <div class="col s12 m12 l12 center">
+                            <center><h4 class="white-text">Title Sponsor</h4></center>
+                            <a href="http://www.chips.gov.in/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/chips.jpg'%}"></a>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <center><h5 class="white-text">Gold Sponsor</h5></center>
+                            <a href="http://www.nayaraipur.gov.in/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/nrda.jpg'%}"></a>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <br><br><br><br>
+                            <center><h5 class="white-text">Platform Sponsor</h5></center>
+                            <a href="https://www.hackerearth.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/HE_logo.png'%}"></a>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <center><h5 class="white-text">Patron</h5></center>
+                            <center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/jetbrains.png'%}"></a></center>
+                        </div>
+                        <div class="col s12 m12 l4 center">
+                            <center><h5 class="white-text">Radio Partner</h5></center>
+                            <a href="#" target="_blank"><img class="responsive-img" src="{% static 'sponsors/fm.jpg' %}"></a>
+                            <br><br>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="team"class="lime">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <center>
+                                <h4 class="white-text">Organizing Team</h4>
+                            </center>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="row">
+                                <div class="col s112 m12 l12 z-depth-1 center">
+                                    
+                                    <img class="responsive-img circle" src="{% static 'Team/rajat.jpg'%}">
+                                    <h5 class="white-text">Rajat Gupta</h5>
+                                    <a class="white-text" href="mailto:rajat15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                                    <h5 class="white-text">Head Coordinator</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="row">
+                                <div class="col s112 m12 l12 z-depth-1 center">
+                                    
+                                    <img class="responsive-img circle" src="{% static 'Team/apurv.jpg'%}">
+                                    <h5 class="white-text">Apurv Saha</h5>
+                                    <a class="white-text" href="mailto:apurv15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                                    <h5 class="white-text">Head Sponsorship</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="row">
+                                <div class="col s112 m12 l12 z-depth-1 center">
+                                    
+                                    <img class="responsive-img circle" src="{% static 'Team/yashk.jpg'%}">
+                                    <h5 class="white-text">Yash Kirti Sinha</h5>
+                                    <a class="white-text" href="mailto:yash15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                                    <h5 class="white-text">Head Marketing and PR</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="row">
+                                <div class="col s112 m12 l12 z-depth-1 center">
+                                    
+                                    <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                                    <h5 class="white-text">Yash Aavart Pathak</h5>
+                                    <a class="white-text" href="mailto:yash15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                                    <h5 class="white-text">Event Management</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="row">
+                                <div class="col s112 m12 l12 z-depth-1 center">
+                                    
+                                    <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                                    <h5 class="white-text">Ananya Shrivastav</h5>
+                                    <a class="white-text" href="mailto:ananya15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                                    <h5 class="white-text">Event Management</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="row">
+                                <div class="col s112 m12 l12 z-depth-1 center">
+                                    
+                                    <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                                    <h5 class="white-text">Shristi Agrawal</h5>
+                                    <a class="white-text" href="mailto:shristi15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                                    <h5 class="white-text">Event Management</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="row">
+                                <div class="col s112 m12 l12 z-depth-1 center">
+                                    
+                                    <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                                    <h5 class="white-text">Rohit Kumar</h5>
+                                    <a class="white-text" href="mailto:rohit15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                                    <h5 class="white-text">Finance</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="row">
+                                <div class="col s112 m12 l12 z-depth-1 center">
+                                    
+                                    <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                                    <h5 class="white-text">Pooja Sonkar</h5>
+                                    <a class="white-text" href="mailto:pooja15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                                    <h5 class="white-text">Finance</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m12 l4">
+                            <div class="row">
+                                <div class="col s112 m12 l12 z-depth-1 center">
+                                    
+                                    <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                                    <h5 class="white-text">Hansa Meghwani</h5>
+                                    <a class="white-text" href="mailto:hansa15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                                    <h5 class="white-text">Head Cultural</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+    
+            <footer class="page-footer my-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">Technovate</h5>
+                            <p class="white-text">
+                                Address: Plot No. 7, Sector 24 <br> International Institute of Information Technology, Naya Raipur, Chhattisgarh, India <br>
+                                Pin: 492002
+                                <br>
+                                Email: <a href="mailto:technovate@iiitnr.ac.in" class="white-text">technovate@iiitnr.ac.in</a>
+                            </p>
+                        </div>
+                        <div class="col l4 offset-l2 s12">
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                            <center> <span class="white-text">Technovate | © 2018 Team Technovate, All rights reserved. | </span><a href="https://hackcodeofconduct.org/548-hack_d_unhackd_2018" target="_blank" class="white-text">Code of Conduct</a>
+                        </a></center>
+                    </div>
+                </div>
+            </footer>
+        </div>
+            
+        <script>
+            $(document).ready(function(){
+                $(".button-collapse").sideNav();
+                $('.parallax').parallax();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if status%}
+  <p class="green-text"> {{ status }} </p>
+{% endif%}
+<div class="row">
+
+<div class="col l3"></div>
+<div class="col l6">
+  <div class="card-panel">
+    <span class="card-title center-align">
+      <i class="material-icons medium center">dashboard</i>
+      <!--<h5>Dashboard</h5>-->
+    </span>
+      <div class="right">
+       <a href="{% url 'logout' %}"><i class="material-icons">power_settings_new</i></a>
+      </div>
+    <hr>
+   <div class="row">
+     <div class="col s12 m12 l4">
+       {% if full_name %}
+       <i class="material-icons medium ">account_circle</i>
+       <h6>{{ full_name }}</h6>
+       {% endif %}
+     </div>
+     <div class="col s12 m12 l4">
+       {% if phone_no %}
+       <i class="material-icons medium ">contact_phone</i>
+       <h6>{{ phone_no }}</h6>
+       {% endif %}
+     </div>
+     <div class="col s12 m12 l4">
+       {% if institute %}
+       <i class="material-icons medium ">work</i>
+       <h6>{{ institute }}</h6>
+       {% endif %}
+     </div>
+   </div>
+</div>
+<div class="col l3"></div>
+
+<div>
+{% if not full_name %}
+  <form method="post" action="{% url 'UpdateProfile' %}">
+      <label for="#institute_uni">Institute or University</label>
+      <input type="text" name="institute_uni" id="institute_uni"/><br>
+      <label for="#phone_no">Phone Number </label>
+      <input type="text" name="phoneno" id="phone_no"/><br>
+    <input type="submit" value="save"/>
+  </form>
+{% endif %}
+</div>
+{% endblock %}

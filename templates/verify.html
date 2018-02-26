@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Verify youreself </title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static "style.css" %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/temp.css' %}">
+  <style>
+   
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col l4"></div>
+    <div class="col l4">
+      <div class="card-panel hoverable">
+        <center><h3>Verify</h3></center>
+        {% if mes %}
+          <h6> {{ mes }}</h6>
+          {% endif %}
+        <form action="{% url 'verify'%}" method="post">
+          {% csrf_token %}
+          <label for="code">Enter Code sent to your email {{email}}</label>
+          <input id="code" name="code" type="text" required="required"/>
+          <button class="btn waves waves-effect blue"type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="col l4"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="description" content="TechNovate, 2k17 is the first ever techno-cultural fest of IIIT-NR, which is the outcome of the collective efforts of each and every student of the IIIT-NR family. Incorporating the various disciplines of Information Technology and Engineering with recreational events such as musical nights, TechNovate promises to be a thrilling experience for every person who is a part of the event."/>
+    <meta name="keywords" content="technovate, tecnical Festival, IIIT-NR ,tech fest"/>
+    <meta name="email" content="technovate@iiitnr.edu.in">
+    <meta name="author" content="Web Development Team IIIT-NR">
+    <link rel="icon" href="{% static "tv_icon.png"%}">
+    <!--open grap meta data-->
+    <meta property="og:image" content="{% static 'op_image.png'%}"/>
+    <meta property="og:title" content="Technovate 2k17 IIIT-NR"/>
+    <meta property="og:url" content="http://technovat-iiitnr.org"/>
+    <meta property="og:description" content="TechNovate, 2k17 is the first ever techno-cultural fest of IIIT-NR, which is the outcome of the collective efforts of each and every student of the IIIT-NR family. Incorporating the various disciplines of Information Technology and Engineering with recreational events such as musical nights, TechNovate promises to be a thrilling experience for every person who is a part of the event."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:author" content="Web Development Team IIIT-NR"/>
+    <title>Technovate 2k17 | Central India's Largest Techno-Cultural Festival</title>
+    <style>
+    #loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 200px;
+      height: 200px;
+
+      margin-top: -100px;
+      margin-left: -100px;
+    }
+
+
+    /* The dot */
+    .dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 10;
+
+      width: 160px;
+      height: 100px;
+
+      margin-top: -50px;
+      margin-left: -80px;
+
+      border-radius: 5px;
+
+      background-color: #1e3f57;
+
+      transform-type: preserve-3d;
+
+      animation: dot1 3s cubic-bezier(.55,.3,.24,.99) infinite;
+    }
+
+    .dot:nth-child(2) {
+      z-index: 11;
+
+      width: 150px;
+      height: 90px;
+
+      margin-top: -45px;
+      margin-left: -75px;
+
+      border-radius: 3px;
+
+      background-color: #3c617d;
+
+      animation-name: dot2;
+    }
+
+    .dot:nth-child(3) {
+      z-index: 12;
+
+      width: 40px;
+      height: 20px;
+
+      margin-top: 50px;
+      margin-left: -20px;
+
+      border-radius: 0 0 5px 5px;
+
+      background-color: #6bb2cd;
+
+      animation-name: dot3;
+    }
+
+    @keyframes dot1 {
+      3%, 97% {
+        width: 160px;
+        height: 100px;
+
+        margin-top: -50px;
+        margin-left: -80px;
+      }
+      30%, 36% {
+        width: 80px;
+        height: 120px;
+
+        margin-top: -60px;
+        margin-left: -40px;
+      }
+      63%, 69% {
+        width: 40px;
+        height: 80px;
+
+        margin-top: -40px;
+        margin-left: -20px;
+      }
+    }
+
+    @keyframes dot2 {
+      3%, 97% {
+        width: 150px;
+        height: 90px;
+
+        margin-top: -45px;
+        margin-left: -75px;
+      }
+      30%, 36% {
+        width: 70px;
+        height: 96px;
+
+        margin-top: -48px;
+        margin-left: -35px;
+      }
+      63%, 69% {
+        width: 32px;
+        height: 60px;
+
+        margin-top: -30px;
+        margin-left: -16px;
+      }
+    }
+
+    @keyframes dot3 {
+      3%, 97% {
+        width: 40px;
+        height: 20px;
+
+        margin-top: 50px;
+        margin-left: -20px;
+      }
+      30%, 36% {
+        width: 8px;
+        height: 8px;
+
+        margin-top: 49px;
+        margin-left: -5px;
+
+        border-radius: 8px;
+      }
+      63%, 69% {
+        width: 16px;
+        height: 4px;
+
+        margin-top: -37px;
+        margin-left: -8px;
+
+        border-radius: 10px;
+      }
+    }
+    </style>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/temp.css"%}">
+ <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+ --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+      $(window).on('load',function () {
+        $('#loader').fadeOut("slow");
+      /*  $('body').css('background',"#2980b9 url('http://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0");*/
+        $('#myT').fadeIn(5000);
+      });
+    </script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">-->
+   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+   <style>
+   #navbar-logo-official{
+    margin-top: 20px;
+     /*height:70px;*/
+    height: 40px;
+   }
+   </style>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+   <!--<script src="{% static "js/materialize.min.js"%}"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    {% if request.user.is_authenticated %}
+    <script>
+    $(document).ready(function(){
+           $(".button-collapse").sideNav();
+           $('#btnc').click(function(){
+             $('#dashboard').hide();
+           });
+     });
+     $(document).ready(function(){
+        $('#joinID').click(function(){
+          $('.button-collapse').sideNav('hide');
+        });
+     });
+          $(document).ready(function () {
+         $('#tevents').hide();
+         $('#sponsors').hide();
+         $('#aboutus').hide();
+         $('#tech-team').hide();
+         $('#workshop').hide();
+         $('#title').hide("slow");
+         $('#dashboard').show();
+         $('.homelink').click(function(){
+             $('#sponsors').hide("slow");
+             $('#aboutus').hide("slow");
+             $('#tevents').hide("slow");
+             $('#tech-team').hide("slow");
+             $('#workshop').hide("slow");
+             $('#dashboard').hide();
+             $('#why').show();
+             $('.button-collapse').sideNav('hide');
+             $('#title').show("slow");
+             $('#tevn1').hide();
+             $('#tevn2').hide();
+             $('#tevn3').hide();
+             $('#tevn4').hide();
+             $('#tevn5').hide();
+             $('#tevn6').hide();
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+         });
+         $('#techeventslink').click(function () {
+             $('#title').hide("slow");
+             $('#sponsors').hide("slow");
+             $('#aboutus').hide("slow");
+             $('#workshop').hide("slow");
+             $('#tech-team').hide("slow");
+             $('#why').show();
+             $('#dashboard').hide();
+             $('.button-collapse').sideNav('hide');
+             $('#tevents').show("slow");
+             $('#tevn1').hide();
+             $('#tevn2').hide();
+             $('#tevn3').hide();
+             $('#tevn4').hide();
+             $('#tevn5').hide();
+             $('#tevn6').hide();
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+         });
+         $('.workshoplink').click(function(){
+           $('#title').hide("slow");
+           $('#sponsors').hide("slow");
+           $('#aboutus').hide("slow");
+           $('#tech-team').hide("slow");
+           $('#why').show();
+           $('#dashboard').hide();
+           $('.button-collapse').sideNav('hide');
+           $('#tevents').hide("slow");
+           $('#workshop').show("slow");
+
+           $('#tevn1').hide();
+           $('#tevn2').hide();
+           $('#tevn3').hide();
+           $('#tevn4').hide();
+           $('#tevn5').hide();
+           $('#tevn6').hide();
+           $('#ntevn1').hide();
+           $('#ntevn2').hide();
+         });
+         $('.indexlink').click(function () {
+             $('#tevents').hide("slow");
+             $('#sponsors').hide("slow");
+             $('#aboutus').hide("slow");
+             $('#tech-team').hide();
+             $('#dashboard').hide();
+             $('.button-collapse').sideNav('hide');
+             $('#title').show("slow");
+             $('#workshop').hide("slow");
+             $('#why').show();
+             $('#tevn1').hide();
+             $('#tevn2').hide();
+             $('#tevn3').hide();
+             $('#tevn4').hide();
+             $('#tevn5').hide();
+             $('#tevn6').hide();
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+         });
+         $('.sponsorslink').click(function () {
+             $('#tevents').hide("slow");
+             $('#title').hide("slow");
+             $('#aboutus').hide("slow");
+             $('#dashboard').hide();
+             $('#tech-team').hide();
+             $('#workshop').hide("slow");
+             $('.button-collapse').sideNav('hide');
+             $('#sponsors').slideToggle("slow");
+             $('#why').show();
+             $('#tevn1').hide();
+             $('#tevn2').hide();
+             $('#tevn3').hide();
+             $('#tevn4').hide();
+             $('#tevn5').hide();
+             $('#tevn6').hide();
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+         });
+         $('.aboutlink').click(function () {
+             $('#tevents').hide("slow");
+             $('#sponsors').hide("slow");
+             $('#title').hide("slow");
+             $('#tech-team').hide();
+             $('#workshop').hide("slow");
+             $('#dashboard').hide();
+             $('.button-collapse').sideNav('hide');
+             $('#aboutus').show("slow");
+             $('#why').show();
+             $('#tevn1').hide();
+             $('#tevn2').hide();
+             $('#tevn3').hide();
+             $('#tevn4').hide();
+             $('#tevn5').hide();
+             $('#tevn6').hide();
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+         });
+         $('.teamlink').click(function() {
+             $('#tevents').hide("slow");
+             $('#sponsors').hide("slow");
+             $('#title').hide("slow");
+             $('#aboutus').hide("slow");
+             $('.button-collapse').sideNav('hide');
+             $('#dashboard').hide();
+             $('#workshop').hide("slow");
+             $('#tech-team').slideDown("slow");
+             $('#why').show();
+             $('#tevn1').hide();
+             $('#tevn2').hide();
+             $('#tevn3').hide();
+             $('#tevn4').hide();
+             $('#tevn5').hide();
+             $('#tevn6').hide();
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+         });
+         $('.dashboardlink').click(function(){
+             $('#tevents').hide("slow");
+             $('#sponsors').hide("slow");
+             $('#title').hide("slow");
+             $('#aboutus').hide("slow");
+             $('.button-collapse').sideNav('hide');
+             $('#workshop').hide("slow");
+             $('#tech-team').hide("slow");
+             $('#why').show();
+             $('#dashboard').show();
+             $('#tevn1').hide();
+             $('#tevn2').hide();
+             $('#tevn3').hide();
+             $('#tevn4').hide();
+             $('#tevn5').hide();
+             $('#tevn6').hide();
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+         });
+
+         $('#tevn1').hide();
+         $('#tevn2').hide();
+         $('#tevn3').hide();
+         $('#tevn4').hide();
+         $('#tevn5').hide();
+         $('#tevn6').hide();
+         $('#ntevn1').hide();
+         $('#ntevn2').hide();
+         $('#tevnl1').click(function() {
+           $('#tevn2').hide("slow");
+           $('#tevn3').hide("slow");
+           $('#tevn4').hide("slow");
+           $('#tevn6').hide("slow");
+           $('#tevn5').hide("slow");
+           $('#ntevn1').hide();
+           $('#ntevn2').hide();
+           $('#tevn1').show("slow");
+         });
+         $('#tevnl2').click(function(){
+           $('#tevn1').hide("slow");
+           $('#tevn3').hide("slow");
+           $('#tevn4').hide("slow");
+           $('#tevn5').hide("slow");
+           $('#tevn6').hide("slow");
+           $('#ntevn1').hide();
+           $('#ntevn2').hide();
+           $('#tevn2').show("slow");
+         });
+         $('#tevnl3').click(function(){
+           $('#tevn1').hide("slow");
+           $('#tevn2').hide("slow");
+           $('#tevn4').hide("slow");
+           $('#tevn5').hide("slow");
+           $('#tevn6').hide("slow");
+           $('#ntevn1').hide();
+           $('#ntevn2').hide();
+           $('#tevn3').show("slow");
+         });
+         $('#tevnl4').click(function(){
+           $('#tevn1').hide("slow");
+           $('#tevn2').hide("slow");
+           $('#tevn3').hide("slow");
+           $('#tevn5').hide("slow");
+           $('#tevn6').hide("slow");
+           $('#ntevn1').hide();
+           $('#ntevn2').hide();
+           $('#tevn4').show("slow");
+         });
+         $('#tevnl5').click(function(){
+           $('#tevn1').hide("slow");
+           $('#tevn2').hide("slow");
+           $('#tevn3').hide("slow");
+           $('#tevn4').hide("slow");
+           $('#tevn6').hide("slow");
+           $('#ntevn1').hide();
+           $('#ntevn2').hide();
+           $('#tevn5').show("slow");
+         });
+         $('#tevnl6').click(function () {
+           $('#tevn1').hide("slow");
+           $('#tevn2').hide("slow");
+           $('#tevn3').hide("slow");
+           $('#tevn4').hide("slow");
+           $('#tevn5').hide("slow");
+           $('#ntevn1').hide();
+           $('#ntevn2').hide();
+           $('#tevn6').show("slow");
+         });
+         $('#ntevnl1').click(function(){
+           $('#tevn1').hide("slow");
+           $('#tevn2').hide("slow");
+           $('#tevn3').hide("slow");
+           $('#tevn4').hide("slow");
+           $('#tevn5').hide("slow");
+           $('#tevn6').hide("slow");
+           $('#ntevn2').hide("slow");
+           $('#ntevn1').show("slow");
+         });
+         $('#ntevnl2').click(function(){
+           $('#tevn1').hide("slow");
+           $('#tevn2').hide("slow");
+           $('#tevn3').hide("slow");
+           $('#tevn4').hide("slow");
+           $('#tevn5').hide("slow");
+           $('#tevn6').hide("slow");
+           $('#ntevn1').hide("slow");
+           $('#ntevn2').show("slow");
+         });
+     });
+    $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+    });
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+    $(document).ready(function(){
+        $('.carousel.carousel-slider').carousel({full_width: true});
+    });
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+    $(document).ready(function(){
+         $('fixed-action-btn').openFAB();
+    });
+    $(document).ready(function(){
+      $('.tooltipped').tooltip({delay: 50});
+    });
+    </script>
+    {% else %}
+     <script src="{% static 'technovate.js'%}"></script>
+     {% endif%}
+     <script type="text/javascript">
+       $(document).ready(function(){
+        $('.accomodation').click(function(){
+          $('.button-collapse').sideNav('hide');
+          $('#accomodation-details').show("slow");
+        });
+        $('.close').click(function(){
+          $('#accomodation-details').hide("fast");
+          $('#privacy-disclaimer').hide("fast");
+        });
+        $('.privacy-policy').click(function(){
+          $('.button-collapse').sideNav('hide');
+          $('#privacy-disclaimer').show('fast');
+        });
+       });
+     </script>
+</head>
+
+<body>
+  <script>
+  function copyTo(element) {
+    var $temp = $("<input>");
+   $("body").append($temp);
+   $temp.val($(element).text()).select();
+   document.execCommand("copy");
+   $temp.remove();
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1819830324960691',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="loader">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+<div id="particles-js"></div>
+<div id="myT">
+<!-- <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
+
+<!-- Navigation Panel -->
+<div class="navbar-fixed">
+  <nav class="transparent">
+    <div class="nav-wrapper">
+      <a class="brand-logo hide-on-med-and-down left indexlink" href="#"><img class="brand-logo" id ="navbar-logo-official" src="{% static 'technovate_nav.png' %}"></a>
+      <a href="#" id="btnc" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="tooltipped homelink" data-position="bottom" data-delay="50" data-tooltip="Go back to home" href="#" >HOME</a></li>
+          <li><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Explore events..." href="{% url 'techevents'%}">EVENTS</a></li>
+          <li><a class="tooltipped workshoplink" data-position="bottom" data-delay="50" data-tooltip="View Workshop" href="#">WORKSHOP</a></li>
+          <li><a class="tooltipped teamlink" data-position="bottom" data-delay="50" data-tooltip="Meet the team.." href="#">OUR TEAM</a></li>
+          <li><a class="tooltipped sponsorslink" data-position="bottom" data-delay="50" data-tooltip="View sponsors" href="#">SPONSORS</a></li>
+          {% if request.user.is_authenticated %}
+            <li><a class="tooltipped dashboardlink" data-position="bottom" data-delay="50" data-tooltip="Go to dashboard"  href="#"><i class="material-icons">dashboard</i></a></li>
+            <li><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Log Out" href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i></a></li>
+            {% else %}
+          <li><a class="modal-trigger" href="#modal1">JOIN US</a></li>
+          <li><a class="modal-trigger" href="#modal2">CAMPUS AMBASSADOR</a></li>
+          {% endif %}
+          <li><a class="tooltipped aboutlink" data-position="bottom" data-delay="50" data-tooltip="Vision" href="#">ABOUT US</a></li>
+        </ul>
+        </div>
+    </nav>
+    <ul id="mobile-demo" class="side-nav">
+        <li class="logo"><a href="#" class="indexlink brand-logo">
+          <img src="{% static 'TECHNOVATE_beta.png'%}">
+        </a></li><br><br><li><div class="divider"></div></li>
+        <li><a href="/"><i class="material-icons">home</i>HOME</a></li>
+        <li><a href="{%url 'techevents'%}"><i class="material-icons">event</i>EVENTS</a></li>
+        <li><a href="#" class="accomodation"><i class="material-icons">local_hotel</i>HOSPITALITY</a></li>
+        <li><a href="#" class="privacy-policy"><i class="material-icons">import_contacts</i>PRIVACY</a></li>
+         
+  </div>
+      <div id="title">
+       <img src="{% static 'index_back_Y.png'%}" id="main" class="responsive-img">
+      </div>
+
+      <div class="my-btn-f">
+        <a href="#contact_modal" class="modal-trigger hoverable waves-effect waves-light btn blue">CONTACT US</a>
+      </div>
+
+       <div id="why"class="my-btn-i">
+         <a class="hoverable waves-effect waves-light btn blue" href="{% static 'documents/IIIT-NR_Sponsorship_Brochure.pdf'%}">Sponsorship Brochure</a>
+       </div>
+
+       <div class="modal" id="contact_modal">
+         <div class="modal-content">
+           <h3 class="blue-text">Contact Us</h3><br>
+           <hr>
+           <div class="row">
+             <div class="col s12 m12 l6">
+               <a href="https://www.facebook.com/technovate.iiitnr/" target="_blank"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i><h5>Stay in touch with our facebook page</h5></a>
+             </div>
+             <div class="col s12 m12 l6">
+               <a href="https://www.instagram.com/technovate.iiitnr" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i><h5>Follow us on Instagram</h5></a>
+             </div>
+             <div class="col s12 m12 l6">
+               <a href="https://www.twitter.com/technovate.iiitnr" target="_blank"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i><h5>Tweet us at Twitter</h5></a>
+             </div>
+             <div class="col s12 m12 l6">
+               <a class="tooltipped"  onclick="copyTo('#eml')" data-position="bottom" data-delay="50" id="temail"data-tooltip="click to copy email"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i><h5>Mail us on our official Technovate mail</h5></a>
+               <span id="eml" style="display:none">technovate@iiitnr.edu.in</span>
+             </div>
+           </div>
+         </div>
+       </div>
+
+<!-- Events-->
+  <div id="tevents">
+   <div class="carousel">
+        <a class="carousel-item" id="tevnl1" href="#e1"><img src="{% static 'event_logo/BUG_SMASHER.jpg'%}"></a>
+        <a class="carousel-item" id="tevnl2" href="#e2"><img src="{% static 'event_logo/CODE.jpg'%}"></a>
+        <a class="carousel-item" id="tevnl3" href="#e3"><img src="{% static 'event_logo/Robo_Race.jpg'%}"></a>
+        <a class="carousel-item" id="tevnl4" href="#e4"><img src="{% static 'event_logo/tECH_qUIZ.jpg'%}"></a>
+        <a class="carousel-item" id="tevnl5" href="#e5"><img src="{% static 'event_logo/Web_Design.jpg'%}"></a>
+        <a class="carousel-item" id="ntevnl1" href="#ne1"><img src="{% static 'event_logo/treasure_hunt.jpg'%}"></a>
+        <a class="carousel-item" id="ntevnl2" href="#ne2"><img src="{% static 'event_logo/Dance.jpg'%}"></a>
+    </div>
+
+
+    </div>
+<!-- -->
+
+<!-- Accomodation-->
+<div id="accomodation-details" class="acc-desc">
+      <div class="row">
+        <div class="col s9 m9 l9 white-text"><h4>Hospitality</h4></div>
+        <a class="close" href="#"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i></a>
+        <div class="col s12 m12 l6">
+          <p class="event-details white-text"> Not from around here, worried where you are going to spend the night as the campus prepares itself for yet another magnanimous day, well worry no more, here at IIIT NR, we provide the cheapest and best accommodation, with the infinitesimal price of Rs. 100, you can spend two nights at our campus and enjoy the calm night of the city of Naya Raipur.</p>
+          <br>
+         <!-- <p class="event-details white-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+        </div>
+        <div class="col s12 m12 l6"></div>
+      </div>
+    </div>
+<!--  End of Accomodation-->
+
+<!-- Disclaimer and Privacy Policy -->
+  <div id="privacy-disclaimer" class="acc-desc">
+     <div class="row">
+       <div class="col s12 m9 l9 white-text"><h5>Terms and Conditions</h5></div>
+       <a class="close" href="#"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i></a>
+       <div class="col s12 m9 l9 white-text"><h6>Disclaimer</h6></div>
+       <div class="col s12 m12 l12 white-text"><p class="event-details">
+         This service is provided to facilitate access and make payments online. TechNovate 2k17 or the
+payment service provider do not make any representation of any kind, explicit or implicit, as to
+the payment gateway other than what is specified on TechNovate’s website. By
+accepting/agreeing to these terms and conditions, the user agrees that the use of online payment
+service is entirely at own risk and responsibility.
+       </p>
+     </div>
+     <div class="col 12 m12 l12 white-text"><h6>Privacy Policy</h6></div>
+     <div class="col s12 m12 l12 white-text">
+     <ul class="white-text event-details">
+       <li><p><b>Information we collect:</b>  We ensure that the collection of personal information is limited to what is necessary to fulfill the purpose as mentioned. If your information is used in a manner different than the purpose it is collected, then we will ask you for your consent prior to its use.</p></li>
+       <li><p><b>How do we use your information:</b>   Your information will be used to process transactions. Your information will not be sold, exchanged or given to any other institution for reason whatsoever, without your consent, other than delivering the purchased service or product.</p></li>
+        <li><p><b>Cookies:</b>Technovate-iiitnr.org uses cookies to store information about visitor's eferences, to personalize or customize our web page content based upon visitor's browser type or other information that the visitor sends via their browser. Any information collected via cookies will not be shared with any third party.</p></li>
+     </ul>
+     </div>
+     <div class="col 12 m12 l12 white-text"><h6>Consent</h6></div>
+     <div class="col s12 m12 l12 white-text">
+       <p class="event-details">By using our website, you hereby consent to our privacy policy and agree to its terms and
+conditions.</p>
+     </div>
+     <div class="col 12 m12 l12 white-text"><h6>Cancellation Policy</h6></div>
+     <div class="col s12 m12 l12 white-text">
+       <p class="event-details">No amount will be refunded upon the cancellation of your tickets or passes. In case of any conflict, the decision of the organizers will be final. In any event, the organizers shall not be liable for special, punitive, consequential or incidental damages, including lost revenue, profits
+or other benefits.</p>
+     </div>
+  </div>
+  </div>
+<!-- -->
+
+<!-- TEAM VIEW -->
+    <div class="row" id="tech-team">
+
+      <div id="pr" class="col s12 m12 l12">
+        <center><h4 class="white-text">Public Relation</h4></center>
+        <br><hr>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <img class="memberimg" src="{% static 'Team/piyush.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12">
+              <div class="member">PIYUSH YADUVANSHI</div>
+              <div class="work">Public Relation</div>
+              <div class="contact">
+                <a href="tel:8957152164">8957152164</a>
+                <a href="mailto:piyush15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col l1"></div>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <img class="memberimg" src="{% static 'Team/shrikant.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12">
+              <div class="member">SHRIKANT GUPTA</div>
+              <div class="work">Public Relation</div>
+              <div class="contact">
+                <a href="tel:9977701425">9977701425</a>
+                <a href="mailto:shirkant15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col l1"></div>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <img class="memberimg" src="{% static 'Team/abhi.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12">
+              <div class="member">ABHISHEK SHARMA</div>
+              <div class="work">Public Relation</div>
+              <div class="contact">
+                <a href="tel:9406016961">9406016961</a>
+                <a href="mailto:abhishek15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="web" class="col s12 m12 l12">
+        <center><h4 class="white-text">Web Team</h4></center>
+        <br><hr>
+        <div class="col l2"></div>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12 ">
+              <img class="memberimg" src="{% static 'Team/rajat.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12">
+              <div class="member">RAJAT GUPTA</div>
+              <div class="work">WEB DEVELOPMENT</div>
+              <div class="contact">
+                <a href="tel:7587745898">7587745898</a>
+                <a href="mailto:rajatgupta310198@gmail.com"><i class="material-icons">email</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col l2"></div>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <img class="memberimg" src="{% static 'Team/yashk.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12">
+               <div class="member">YASH K SINHA</div>
+                <div class="work">WEB DEVELOPMENT</div>
+                <div class="contact">
+                <a href="tel:7587745898" target="_self">7587745898</a>
+                <a href="mailto:yash15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+      <div id="spon" class="col s12 m12 l12">
+        <center><h4 class="white-text">Sponsorship</h4></center>
+        <br><hr>
+        <div class="col s12 m12 l3 hoverable">
+           <div class="row">
+             <div class="col s12 m12 l12">
+               <img class="memberimg" src="{% static 'Team/sid.jpg' %}">
+             </div>
+             <div class="col s12 m12 l12">
+               <div class="member">SIDDHANT DASH</div>
+               <div class="work">Sponsorship</div>
+               <div class="contact">
+                 <a href="tel:9425556776">9425556776</a>
+                 <a href="mailto:siddhant15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="col l1"></div>
+         <div class="col s12 m12 l3 hoverable">
+           <div class="row">
+             <div class="col s12 m12 l12">
+               <img class="memberimg" src="{% static 'Team/prakshaal.jpg' %}">
+             </div>
+             <div class="col s12 m12 l12">
+               <div class="member">PRAKSHAAL JAIN</div>
+               <div class="work">Sponsorship</div>
+               <div class="contact">
+                 <a href="tel:9039081299">9039081299</a>
+                 <a href="mailto:prakshaal15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="col l1"></div>
+         <div class="col s12 m12 l3 hoverable">
+           <div class="row">
+             <div class="col s12 m12 l12">
+               <img class="memberimg" src="{% static 'Team/danish.jpg' %}">
+             </div>
+             <div class="col s12 m12 l12">
+               <div class="member">Ehsan Danish</div>
+               <div class="work">Sponsorship</div>
+               <div class="contact">
+                 <a href="tel:9406016820">9406016820</a>
+                 <a href="mailto:danish15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+               </div>
+             </div>
+           </div>
+         </div>
+      </div>
+
+
+
+
+
+      <div id="event_man" class="col s12 m12 l12">
+        <center><h4 class="white-text">Event Management</h4></center>
+        <br><hr>
+        <div class="col l5"></div>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <img class="memberimg" src="{% static 'Team/anand.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12">
+              <div class="member">ANAND V SINGH</div>
+              <div class="work">Event Management</div>
+              <div class="contact">
+                <a href="tel:9406016967">9406016967</a>
+                <a href="mailto:anand15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="marketing" class="col s12 m12 l12">
+        <center><h4 class="white-text">Marketing and Promotion</h4></center>
+        <br><hr>
+        <div class="col l5"></div>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <img class="memberimg" src="{% static 'Team/nitin.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12">
+              <div class="member">NITIN DEONANI</div>
+              <div class="work">Marketing and Promotion</div>
+              <div class="contact">
+                <a href="tel:70249807388">7024980738</a>
+                <a href="mailto:nitin15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="accounts" class="col s12 m12 l12">
+        <center><h4 class="white-text">Accounts and Ideate</h4></center>
+        <br><hr>
+        <div class="col l2"></div>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <img class="memberimg" src="{% static 'Team/kaustub.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12 ">
+              <div class="member">KAUSTUBH VATS</div>
+              <div class="work">Accounts and Ideate</div>
+              <div class="contact">
+                <a href="tel:9406016899">9406016899</a>
+                <a href="mailto:kaustubh15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col l2"></div>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <img class="memberimg" src="{% static 'Team/prashant.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12">
+              <div class="member">PRASHANT DHILLON</div>
+              <div class="work">Accounts and Ideate</div>
+              <div class="contact">
+                <a href="tel:8764025173">8764025173</a>
+                <a href="mailto:prasant15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="cult" class="col s12 m12 l12">
+        <center><h4 class="white-text">Cultural</h4></center>
+        <br><hr>
+        <div class="col l5"></div>
+        <div class="col s12 m12 l3 hoverable">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <img class="memberimg" src="{% static 'Team/nitesh.jpg' %}">
+            </div>
+            <div class="col s12 m12 l12">
+              <div class="member">NITESH AGRAWAL</div>
+              <div class="work">Cultural</div>
+              <div class="contact">
+                <a href="tel:9777778670">9777778670</a>
+                <a href="mailto:nitesh15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+<!-- Sponsors  -->
+    <div class="row" id="sponsors">
+       <div class="col s12 m12 l12">
+         <center><h4 class="white-text">Sponsors</h4></center><br><hr><br>
+         <div class="row">
+         <div class="col s12 m12 l3 hoverable">
+           <div class="row">
+             <div class="col s12 m12 l12">
+               <center><img class="responsive-img" src="{% static 'sponsors/jetbrains.png' %}"></center>
+             </div>
+           </div>
+         </div>
+         <div class="col s12 m12 l3 hoverable">
+           <div class="row">
+             <div class="col s12 m12 l12">
+               <center><img class="responsive-img" src="{% static 'sponsors/chips.jpg' %}"></center>
+             </div>
+           </div>
+         </div>
+         <div class="col s12 m12 l3 hoverable">
+           <div class="row">
+             <div class="col s12 m12 l12">
+               <center><img class="responsive-img" src="{% static 'sponsors/MyFMLogo.jpg' %}"></center>
+             </div>
+           </div>
+         </div>
+        </div>
+       </div>
+     </div>
+
+<!-- About Tecnhovate -->
+    <div class="row" id="aboutus">
+        <div class="col l3">
+
+        </div>
+        <div class="col s12 l6">
+            <div class="card-panel transparent white-text">
+                <h3>TECHNOVATE</h3>
+                <p class="about">TechNovate, 2k17 is the first ever techno-cultural fest of IIIT-NR, which is the outcome of the collective efforts of each and every student of the IIIT-NR family. Incorporating the various disciplines of Information Technology and Engineering with recreational events such as musical nights, TechNovate promises to be a thrilling experience for every person who is a part of the event.</p>
+            </div>
+        </div>
+
+    </div>
+<!-- Event View 1st version-->
+   <div id="description_events"class="row">
+     <div class="col l3"></div>
+     <div class="col s12 m12 l6" id="tevn1">
+       <div class="card-panel"><span class="card-title text-darken-2 event-title">BUG SMASHER</span>
+        <div class="right"><a href="#" target="_blank" dowaload><i class="material-icons">more</i></a></div>
+         <p class="event-details">Be the bounty hunter and search for those minute programming errors in a given code segments. Participants would also correct and run the code.</p>
+         <hr>
+         <h6 class="text-datken-3">Event Co-ordinator</h6>
+         <div class="event-co">
+           <ul>
+             <li>Shashank Kotyaan</li>
+             <li><a href="mailto:shashank15100@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+     <div class="col s12 m12 l6" id="tevn2">
+       <div class="card-panel"><span class="card-title text-darken-2 event-title">Game of Codes</span>
+         <div class="right"><a href="#" target="_blank" dowaload><i class="material-icons">more</i></a></div>
+         <p class="event-details">A Coding event exclusively for 1st year students and students from higher secondary classes. Participants will be given a problem statement which would be supposed to be implemented in any programming language.</p>
+         <hr>
+         <h6 class="text-datken-3">Event Co-ordinator</h6>
+         <div class="event-co">
+           <ul>
+             <li>Shrikant Gupta</li>
+             <li><a href="mailto:shrikant15101@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+             <li>Yash Kirti Sinha</li>
+             <li><a href="mailto:yashkirtisinha1@gmail.com"><i class="material-icons">email</i></a></li>
+             <li>Ananya Shrivastav</li>
+             <li><a href="mailto:ananya15101@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+     <div class="col s12 m12 l6" id="tevn3">
+       <div class="card-panel"><span class="card-title text-darken-2 event-title">Robo Valley</span>
+         <div class="right"><a href="{% static 'documents/robo_valley.docx'%}" target="_blank" dowaload><i class="material-icons">more</i></a></div>
+          <p class="event-details">A racing competition to be organized among wireless robots controlled by the participants. The first three to reach the finish line will win the event and awarded with cash prizes.</p>
+          <hr>
+          <h6 class="text-datken-3">Event Co-ordinator</h6>
+          <div class="event-co">
+            <ul>
+              <li>Akash</li>
+              <li><a href="mailto:akash15101@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+              <li>Aishwary</li>
+              <li><a href="mailto:aishwary15101@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+            </ul>
+          </div>
+       </div>
+     </div>
+     <div class="col s12 m12 l6" id="tevn4">
+       <div class="card-panel"><span class="card-title text-darken-4 event-title">Tech Grandmasters</span>
+         <div class="right"><a href="{% static 'documents/Rules-and-Regulations-Technical-Quiz.pdf'%}" target="_blank" download><i class="material-icons">more</i></a></div>
+          <p class="event-details">
+            Enhance your Technical knowledge by participating in the IT Quiz with questions on various disciplines of Information Technology and Engineering.
+          </p>
+          <hr>
+          <h6 class="text-datken-3">Event Co-ordinator</h6>
+          <div class="event-co">
+            <ul>
+              <li>Yash Aavart Pathak</li>
+              <li><a href="mailto:yash15101@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+              <li>Ashish Upadhyay</li>
+              <li><a href="mailto:ashish5100@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+            </ul>
+          </div>
+       </div>
+     </div>
+     <div class="col s12 m12 l6" id="tevn5">
+       <div class="card-panel"><span class="card-title text-darker-4 event-title">Wolf Of Web Street</span>
+         <div class="right"><a href="#"><i class="material-icons">more</i></a></div>
+         <p class="event-details">
+           An overnight contest in which participants will be given a theme during the course of the event on which they have to design a website and will be hosted on the local server. Attractive prizes for best three websites.
+         </p>
+         <hr>
+         <h6 class="text-datken-3">Event Co-ordinator</h6>
+         <div class="event-co">
+           <ul>
+             <li>Rajat Gupta</li>
+             <li><a href="mailto:rajatgupta310198@gmail.com"><i class="material-icons">email</i></a></li>
+             <li>Mclican Ekka</li>
+             <li><a href="mailto:mclikan15100@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+           </ul>
+         </div>
+      </div>
+    </div>
+
+    <div class="col s12 m12 l6" id="ntevn1">
+      <div class="card-panel"><span class="card-title text-darker-4 event-title">House of Clues</span>
+        <div class="right"><a href="#"><i class="material-icons">more</i></a></div>
+        <p class="event-details">
+          A unique QR-Code based Treasure Hunt event. So get Sherlock hat and connect the clues by scanning QR code.
+        </p>
+        <hr>
+        <h6 class="text-datken-3">Event Co-ordinator</h6>
+        <div class="event-co">
+          <ul>
+            <li>Rohit Singh</li>
+            <li><a href="mailto:rohit15100@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+            <li>Arijit Saha</li>
+            <li><a href="mailto:arijit15100@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+          </ul>
+        </div>
+     </div>
+   </div>
+   <div class="col s12 m12 l6" id="ntevn2">
+     <div class="card-panel"><span class="card-title text-darker-4 event-title">Dance Fever</span>
+       <div class="right"><a href="#"><i class="material-icons">more</i></a></div>
+       <p class="event-details">
+         The war of masters. A dance competition which is to be held in Technovate 2k17 will be a major attraction.
+       </p>
+       <hr>
+       <h6 class="text-datken-3">Event Co-ordinator</h6>
+       <div class="event-co">
+         <ul>
+           <li>K G Prakash</li>
+           <li><a href="mailto:prakash15101@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+           <li>Jalem Raj Surjan</li>
+           <li><a href="mailto:raj15100@iiitnr.edu.in"><i class="material-icons">email</i></a></li>
+         </ul>
+       </div>
+    </div>
+   </div>
+     <div class="col l3"></div>
+   </div>
+</div>
+{% block content %}
+{% endblock %}
+   {% if request.user.is_authenticated %}
+   <div id = "dashboard" class="row">
+   <div class="col l3"></div>
+   <div class="col s12 m12 l6 blue-text z-depth-3 hoverable">
+     <div id="basic_dash" class="card large">
+       <span class="card-title center-align">
+         <!--<i class="material-icons medium center">dashboard</i>-->
+       </span>
+         <center>  <h5>Dashboard</h5></center>
+       <hr>
+      <div class="row hide-on-med-and-down">
+        <!--<div class="col s4"></div>-->
+        <div class="col s8 m8 l4">
+         <!-- {% if full_name %}-->
+          <i class="material-icons medium ">account_circle</i>
+          <h6>{{ request.user.get_full_name }}</h6>
+          <!--{% endif %}-->
+        </div>
+         <!--<div class="col s4"></div>-->
+        <div class="col s8 m8 l4">
+          <!--{% if phone_no %}-->
+          <i class="material-icons medium ">contact_phone</i>
+          <h6>{{ request.user.profile.get_phone_no }}</h6>
+         <!-- {% endif %}-->
+        </div>
+         <!--<div class="col s4 "></div>-->
+        <div class="col s8 m8 l4">
+          <!--{% if institute %}-->
+          <i class="material-icons medium ">work</i>
+          <h6>{{ request.user.profile.get_Institute_Uni }}</h6>
+         <!-- {% endif %} -->
+        </div>
+      </div>
+      <div class="row hide-on-large-only">
+        <div class="col s3 m3 l4">
+         <!-- {% if full_name %}-->
+          <i class="material-icons medium ">account_circle</i>
+          <h6>{{ request.user.get_full_name }}</h6>
+          <!--{% endif %}-->
+        </div>
+         <div class="col s1 m1"></div>
+        <div class="col s3 m3 l4">
+          <!--{% if phone_no %}-->
+          <i class="material-icons medium ">contact_phone</i>
+          <h6>{{ request.user.profile.get_phone_no }}</h6>
+         <!-- {% endif %}-->
+        </div>
+         <div class="col s1 m1"></div>
+        <div class="col s3 m3 l4">
+          <!--{% if institute %}-->
+          <i class="material-icons medium ">work</i>
+          <h6>{{ request.user.profile.get_Institute_Uni }}</h6>
+         <!-- {% endif %} -->
+        </div>
+      </div>
+      <hr>
+     <div class="row">
+       <div class="col s12 m12 l6 blue-text">
+         <h6>Select Event</h6>
+         <form action="{%url 'enroll'%}" method="post">
+
+           {% csrf_token %}
+             <div class="input-field col s12">
+               <select name="event">
+                 <optgroup label="Technical">
+                   <option value="Game of Codes" name="Game of Codes">Game of Codes</option>
+                   <option value="Wolf of Web Street" name="Wolf of Web Street">Wolf of Web Street</option>
+                   <option value="Breaking Bugs" name="Breaking Bugs">Breaking Bugs</option>
+                   <option value="Techgrand Masters" name="Techgrand Masters">Techgrand Masters</option>
+                   <option value="Robo Valley" name="Robo Valley">Robo Valley</option>
+                   <option value="Robokick" name="Robokick">Robokick</option>
+                   <option value="Swat Bots" name="Swat Bots">Swat Bots</option>
+                   <option value="Clash of Ideas" name="Clash of Ideas">Clash of Ideas</option>
+                 </optgroup>
+                 <optgroup label="Non Technical">
+                   <option value="IIIT Wants To Know" name="IIIT Wants To Know">IIIT Wants To Know</option>
+                   <option value="Director's Cut" name="Director's Cut">Director's Cut</option>
+                   <option value="House of Clues" name="House of Clues">Houser of Clues</option>
+                   <option value="Dance Fever" name="Dance Fever">Dance Fever</option>
+                 </optgroup>
+               </select>
+               <!--<label><h5>Event Select</h5></label>-->
+             </div>
+             <button type="submit" class="btn waves-effect waves-light blue">Save</button>
+           </form>
+         </div>
+         <div class="col s12 m12 l6">
+           {% if request.user.profile.events.all %}
+             <h6>Participated in following events</h6>
+             <ul>
+             {% for t in request.user.profile.events.all %}
+               <li>{{t}}</li>
+               {%endfor%}
+             </ul>
+               {%else%}
+               <strong><h6 style="color:green">"We will be initiate registration for events soon. And we will ping you when it wil start"</h6></strong>
+               {%endif%}
+         </div>
+         <div class="col s12 m12 l6">
+           <h6 style="color:green">Status of payment</h6>
+         </div>
+       </div>
+     </div>
+   <div class="col  l3"></div>
+   </div>
+   {% else %}
+
+   <!-- Campus Ambassador Form Modal -->
+      <div id="modal2" class="modal">
+       <div class="modal-content">
+            <span class="card-title">Campus Ambassador </span>
+            <form action="{% url 'representative'%}" method="post">
+                <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input type="text" name="Name" autocomplete="off" required="required" id="Name"/>
+                        <label for="Name">Name</label>
+                    </div>
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix">email</i>
+                        <input type="email" name="email" autocomplete="off" required="required" id="email"/>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-field col s12 m12 l12">
+                         <i class="material-icons prefix">school</i>
+                         <input type="text" name="ins" autocomplete="off" required="required" id="ins"/>
+                         <label for="ins">Institute</label>
+                    </div>
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix">contact_phone</i>
+                        <input type="text" name="ph" autocomplete="off" required="required" id="ph"/>
+                        <label for="ph">Phone No.</label>
+                    </div>
+                </div>
+                <button type="submit" value="Apply" class="btn waves-effect waves-light teal">Apply<i class="material-icons right">send</i></button>
+            </form>
+       </div>
+     </div>
+
+
+   <!-- Login And Sign Up form Modal -->
+     <div id="modal1" class="modal">
+       <div class="modal-content">
+         <div class="row">
+         <div class="col s12 m12 l12">
+              <span class="card-title">Login </span>
+              <div class="row">
+                <div class="col s12 m12 l4">
+                  <form id="log_form" action="{% url 'login' %}" method="post">
+                      {% csrf_token %}
+                  <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                       <i class="material-icons prefix">email</i>
+                      <input type="email" name="email" autocomplete="off" required="required" id="email"/>
+                      <label for="email">Email</label>
+                    </div>
+                    <div class="input-field col s12 m12 l12">
+                      <i class="material-icons prefix">vpn_key</i>
+                      <input type="password" name="password" autocomplete="off" required="required" id="password"/>
+                      <label for="password">Password</label>
+                    </div>
+                  </div>
+                    <button type="submit" value="Log In" class="btn waves-effect waves-light teal">Log In<i class="material-icons right">send</i></button>
+                  </form><br>
+                </div>
+                <div class="col s12 m12 l1"></div>
+                <div class="col s12 m12 l7">
+                  <span class="card-title">Sign Up </span>
+                  <form action="{% url 'register'%}"method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                       <div class="input-field col s12 m12 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input type="text" name="first_name" autocomplete="off" required="required" id="first_name"/>
+                        <label for="first_name">First Name</label>
+                       </div>
+                       <div class="input-field col s12 m12 l6">
+                        <input type="text" name="last_name" autocomplete="off" required="required" id="first_name"/>
+                        <label for="last_name">Last Name</label>
+                       </div>
+                       <div class="input-field col s12 m12 l12">
+                          <i class="material-icons prefix">email</i>
+                         <input type="email" name="email" autocomplete="off" required="required" id="email"/>
+                         <label for="email">Email</label>
+                       </div>
+                        <div class="input-field col s12 m12 l12">
+                            <i class="material-icons prefix">school</i>
+                            <input type="text" name="institute_uni" id="institute_uni" autocomplete="off" required="required"/>
+                            <label for="institute_uni">Institute</label>
+                        </div>
+                        <div class="input-field col s12 m12 l12">
+                            <i class="material-icons prefix">call</i>
+                            <input type="text" name="phoneno" id="phoneno" autocomplete="off" required="required"/>
+                            <label for="phoneno">Mobile No.</label>
+                        </div>
+                       <div class="input-field col s12 m12 l12">
+                         <i class="material-icons prefix">vpn_key</i>
+                         <input type="password" name="password" autocomplete="off" required="required" id="password"/>
+                         <label for="password">Password</label>
+                       </div>
+                    </div>
+                    <button type="submit" value="Sign Up" class="btn waves-effect waves-light teal">Sign Up<i class="material-icons right">send</i></button>
+                </form>
+                </div>
+              </div>
+         </div>
+       </div>
+     </div>
+     {% endif %}
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js'></script>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#72ce35"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+  </script>
+</body>
+</html>

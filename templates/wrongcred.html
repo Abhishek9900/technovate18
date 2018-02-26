@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="description" content="TechNovate, 2k17 is the first ever techno-cultural fest of IIIT-NR, which is the outcome of the collective efforts of each and every student of the IIIT-NR family. Incorporating the various disciplines of Information Technology and Engineering with recreational events such as musical nights, TechNovate promises to be a thrilling experience for every person who is a part of the event."/>
+    <meta name="keywords" content="technovate, tecnical Festival, IIIT-NR ,tech fest"/>
+    <meta name="email" content="technovate@iiitnr.edu.in">
+    <meta name="author" content="Web Development Team IIIT-NR">
+    <link rel="icon" href="{% static "tv_icon.png"%}">
+    <!--open grap meta data-->
+    <meta property="og:image" content="{% static 'op_image.png'%}"/>
+    <meta property="og:title" content="Technovate 2k17 IIIT-NR"/>
+    <meta property="og:url" content="http://technovat-iiitnr.org"/>
+    <meta property="og:description" content="TechNovate, 2k17 is the first ever techno-cultural fest of IIIT-NR, which is the outcome of the collective efforts of each and every student of the IIIT-NR family. Incorporating the various disciplines of Information Technology and Engineering with recreational events such as musical nights, TechNovate promises to be a thrilling experience for every person who is a part of the event."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:author" content="Web Development Team IIIT-NR"/>
+    <title>Technovate 2k17</title>
+    <style>
+    #loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 200px;
+      height: 200px;
+
+      margin-top: -100px;
+      margin-left: -100px;
+    }
+
+
+    /* The dot */
+    .dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 10;
+
+      width: 160px;
+      height: 100px;
+
+      margin-top: -50px;
+      margin-left: -80px;
+
+      border-radius: 5px;
+
+      background-color: #1e3f57;
+
+      transform-type: preserve-3d;
+
+      animation: dot1 3s cubic-bezier(.55,.3,.24,.99) infinite;
+    }
+
+    .dot:nth-child(2) {
+      z-index: 11;
+
+      width: 150px;
+      height: 90px;
+
+      margin-top: -45px;
+      margin-left: -75px;
+
+      border-radius: 3px;
+
+      background-color: #3c617d;
+
+      animation-name: dot2;
+    }
+
+    .dot:nth-child(3) {
+      z-index: 12;
+
+      width: 40px;
+      height: 20px;
+
+      margin-top: 50px;
+      margin-left: -20px;
+
+      border-radius: 0 0 5px 5px;
+
+      background-color: #6bb2cd;
+
+      animation-name: dot3;
+    }
+
+    @keyframes dot1 {
+      3%, 97% {
+        width: 160px;
+        height: 100px;
+
+        margin-top: -50px;
+        margin-left: -80px;
+      }
+      30%, 36% {
+        width: 80px;
+        height: 120px;
+
+        margin-top: -60px;
+        margin-left: -40px;
+      }
+      63%, 69% {
+        width: 40px;
+        height: 80px;
+
+        margin-top: -40px;
+        margin-left: -20px;
+      }
+    }
+
+    @keyframes dot2 {
+      3%, 97% {
+        width: 150px;
+        height: 90px;
+
+        margin-top: -45px;
+        margin-left: -75px;
+      }
+      30%, 36% {
+        width: 70px;
+        height: 96px;
+
+        margin-top: -48px;
+        margin-left: -35px;
+      }
+      63%, 69% {
+        width: 32px;
+        height: 60px;
+
+        margin-top: -30px;
+        margin-left: -16px;
+      }
+    }
+
+    @keyframes dot3 {
+      3%, 97% {
+        width: 40px;
+        height: 20px;
+
+        margin-top: 50px;
+        margin-left: -20px;
+      }
+      30%, 36% {
+        width: 8px;
+        height: 8px;
+
+        margin-top: 49px;
+        margin-left: -5px;
+
+        border-radius: 8px;
+      }
+      63%, 69% {
+        width: 16px;
+        height: 4px;
+
+        margin-top: -37px;
+        margin-left: -8px;
+
+        border-radius: 10px;
+      }
+    }
+    /*Landing Page Configuration */
+
+
+    /*End of Config*/
+    </style>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/temp.css"%}">
+ <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+ --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script>
+
+      $(window).on('load',function () {
+        $('#loader').fadeOut("slow");
+        $('body').delay(2000).css('background',"#2980b9 url('http://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0");
+
+        $('#myT').fadeIn(5000);
+      });
+
+      /*
+      window.onload = function () {
+        /*var url = 'http://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png';*/
+/*
+        document.getElementById("loader").style.display = "none";
+        document.body.style.background ="#2980b9 url('http://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0";
+        document.getElementById("myT").style.display = "block";
+
+      }*/
+    </script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">-->
+   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+   <style>
+   #navbar-logo-official{
+    margin-top: 20px;
+     /*height:70px;*/
+    height: 40px;
+   }
+   </style>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+   <!--<script src="{% static "js/materialize.min.js"%}"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    {% if request.user.is_authenticated %}
+    <script>
+       $(document).ready(function(){
+             $(".button-collapse").sideNav();
+       });
+       $(document).ready(function(){
+          $('#joinID').click(function(){
+            $('.button-collapse').sideNav('hide');
+          });
+       });
+       $(document).ready(function () {
+           $('#tevents').hide();
+           $('#sponsors').hide();
+           $('#aboutus').hide();
+           $('#tech-team').hide();
+           $('#title').hide("slow");
+           $('#dashboard').show();
+           $('#homelink').click(function(){
+               $('#sponsors').hide("slow");
+               $('#aboutus').hide("slow");
+               $('#tevents').hide("slow");
+               $('#tech-team').hide("slow");
+               $('#dashboard').hide();
+               $('#why').show();
+               $('.button-collapse').sideNav('hide');
+               $('#title').show("slow");
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+
+           });
+           $('#techeventslink').click(function () {
+               $('#title').hide("slow");
+               $('#sponsors').hide("slow");
+               $('#aboutus').hide("slow");
+               $('#tech-team').hide("slow");
+               $('#why').hide();
+               $('#dashboard').hide();
+               $('.button-collapse').sideNav('hide');
+               $('#tevents').show("slow");
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+           });
+
+           $('#indexlink').click(function () {
+               $('#tevents').hide("slow");
+               $('#sponsors').hide("slow");
+               $('#aboutus').hide("slow");
+               $('#tech-team').hide();
+               $('#dashboard').hide();
+               $('.button-collapse').sideNav('hide');
+               $('#title').show("slow");
+               $('#why').show();
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+           });
+           $('#sponsorslink').click(function () {
+               $('#tevents').hide("slow");
+               $('#title').hide("slow");
+               $('#aboutus').hide("slow");
+               $('#dashboard').hide();
+               $('#tech-team').hide();
+               $('.button-collapse').sideNav('hide');
+               $('#sponsors').slideToggle("slow");
+               $('#why').show();
+
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+           });
+           $('#aboutlink').click(function () {
+               $('#tevents').hide("slow");
+               $('#sponsors').hide("slow");
+               $('#title').hide("slow");
+               $('#tech-team').hide();
+               $('#dashboard').hide();
+               $('.button-collapse').sideNav('hide');
+               $('#aboutus').show("slow");
+               $('#why').show();
+
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+           });
+           $('#teamlink').click(function() {
+               $('#tevents').hide("slow");
+               $('#sponsors').hide("slow");
+               $('#title').hide("slow");
+               $('#aboutus').hide("slow");
+               $('.button-collapse').sideNav('hide');
+               $('#dashboard').hide();
+               $('#tech-team').slideDown("slow");
+               $('#why').show();
+
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+           });
+           $('#dashboardlink').click(function(){
+               $('#tevents').hide("slow");
+               $('#sponsors').hide("slow");
+               $('#title').hide("slow");
+               $('#aboutus').hide("slow");
+               $('.button-collapse').sideNav('hide');
+               $('#tech-team').hide("slow");
+               $('#why').hide();
+               $('#dashboard').show();
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+           });
+
+           $('#homelinkmobile').click(function(){
+               $('#sponsors').hide("slow");
+               $('#aboutus').hide("slow");
+               $('#tevents').hide("slow");
+               $('#dashboard').hide("slow");
+               $('#tech-team').hide();
+               $('.button-collapse').sideNav('hide');
+               $('#title').show("slow");
+               $('#why').show();
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+
+           });
+           $('#techeventslinkmobile').click(function () {
+               $('#title').hide("slow");
+               $('#sponsors').hide("slow");
+               $('#aboutus').hide("slow");
+               $('#tech-team').hide("slow");
+               $('#dashboard').hide("slow");
+               $('#why').hide();
+               $('.button-collapse').sideNav('hide');
+               $('#tevents').show("slow");
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+           });
+
+           $('#indexlinkmobile').click(function () {
+               $('#tevents').hide("slow");
+               $('#sponsors').hide("slow");
+               $('#aboutus').hide("slow");
+               $('#tech-team').hide();
+               $('#dashboard').hide("slow");
+               $('.button-collapse').sideNav('hide');
+               $('#title').show("slow");
+               $('#why').show();
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+           });
+           $('#sponsorslinkmobile').click(function () {
+               $('#tevents').hide("slow");
+               $('#title').hide("slow");
+               $('#aboutus').hide("slow");
+               $('#tech-team').hide();
+               $('#dashboard').hide("slow");
+               $('.button-collapse').sideNav('hide');
+               $('#sponsors').slideToggle("slow");
+               $('#why').show();
+
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+
+
+           });
+           $('#aboutlinkmobile').click(function () {
+               $('#tevents').hide("slow");
+               $('#sponsors').hide("slow");
+               $('#title').hide("slow");
+               $('#dashboard').hide("slow");
+               $('#tech-team').hide();
+               $('.button-collapse').sideNav('hide');
+               $('#aboutus').slideDown("slow");
+               $('#why').show();
+
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+
+
+           });
+
+           $('#teamlinkmobile').click(function() {
+               $('#tevents').hide("slow");
+               $('#sponsors').hide("slow");
+               $('#title').hide("slow");
+               $('#aboutus').hide("slow");
+               $('#dashboard').hide("slow");
+               $('.button-collapse').sideNav('hide');
+               $('#tech-team').slideDown("slow");
+
+
+               $('#tevn1').hide();
+               $('#tevn2').hide();
+               $('#tevn3').hide();
+               $('#tevn4').hide();
+               $('#tevn5').hide();
+               $('#tevn6').hide();
+
+               $('#ntevn1').hide();
+               $('#ntevn2').hide();
+
+           });
+           $('#dashboardlinkmobile').click(function(){
+              $('#tevents').hide("slow");
+              $('#sponsors').hide("slow");
+              $('#title').hide("slow");
+              $('#aboutus').hide("slow");
+              $('.button-collapse').sideNav('hide');
+              $('#tech-team').hide("slow");
+              $('#dashboard').show("slow");
+
+              $('#tevn1').hide();
+              $('#tevn2').hide();
+              $('#tevn3').hide();
+              $('#tevn4').hide();
+              $('#tevn5').hide();
+              $('#tevn6').hide();
+
+              $('#ntevn1').hide();
+              $('#ntevn2').hide();
+
+           });
+
+           $('#tevn1').hide();
+           $('#tevn2').hide();
+           $('#tevn3').hide();
+           $('#tevn4').hide();
+           $('#tevn5').hide();
+           $('#tevn6').hide();
+           $('#ntevn1').hide();
+           $('#ntevn2').hide();
+
+           $('#tevnl1').click(function() {
+             $('#tevn2').hide("slow");
+             $('#tevn3').hide("slow");
+             $('#tevn4').hide("slow");
+             $('#tevn6').hide("slow");
+             $('#tevn5').hide("slow");
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+
+             $('#tevn1').show("slow");
+           });
+           $('#tevnl2').click(function(){
+             $('#tevn1').hide("slow");
+             $('#tevn3').hide("slow");
+             $('#tevn4').hide("slow");
+             $('#tevn5').hide("slow");
+             $('#tevn6').hide("slow");
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+             $('#tevn2').show("slow");
+
+           });
+           $('#tevnl3').click(function(){
+             $('#tevn1').hide("slow");
+             $('#tevn2').hide("slow");
+             $('#tevn4').hide("slow");
+             $('#tevn5').hide("slow");
+             $('#tevn6').hide("slow");
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+
+             $('#tevn3').show("slow");
+           });
+           $('#tevnl4').click(function(){
+             $('#tevn1').hide("slow");
+             $('#tevn2').hide("slow");
+             $('#tevn3').hide("slow");
+             $('#tevn5').hide("slow");
+             $('#tevn6').hide("slow");
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+
+             $('#tevn4').show("slow");
+           });
+           $('#tevnl5').click(function(){
+             $('#tevn1').hide("slow");
+             $('#tevn2').hide("slow");
+             $('#tevn3').hide("slow");
+             $('#tevn4').hide("slow");
+             $('#tevn6').hide("slow");
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+
+             $('#tevn5').show("slow");
+           });
+           $('#tevnl6').click(function () {
+             $('#tevn1').hide("slow");
+             $('#tevn2').hide("slow");
+             $('#tevn3').hide("slow");
+             $('#tevn4').hide("slow");
+             $('#tevn5').hide("slow");
+             $('#ntevn1').hide();
+             $('#ntevn2').hide();
+
+             $('#tevn6').show("slow");
+           });
+           $('#ntevnl1').click(function(){
+             $('#tevn1').hide("slow");
+             $('#tevn2').hide("slow");
+             $('#tevn3').hide("slow");
+             $('#tevn4').hide("slow");
+             $('#tevn5').hide("slow");
+             $('#tevn6').hide("slow");
+
+             $('#ntevn2').hide("slow");
+             $('#ntevn1').show("slow");
+           });
+           $('#ntevnl2').click(function(){
+             $('#tevn1').hide("slow");
+             $('#tevn2').hide("slow");
+             $('#tevn3').hide("slow");
+             $('#tevn4').hide("slow");
+             $('#tevn5').hide("slow");
+             $('#tevn6').hide("slow");
+             $('#ntevn1').hide("slow");
+
+             $('#ntevn2').show("slow");
+           });
+
+       });
+      $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+          $('.modal-trigger').leanModal();
+      });
+      $(document).ready(function() {
+        $('select').material_select();
+      });
+      $(document).ready(function(){
+          $('.carousel.carousel-slider').carousel({full_width: true});
+      });
+      $(document).ready(function(){
+          $('.carousel').carousel();
+      });
+      $(document).ready(function(){
+           $('fixed-action-btn').openFAB();
+      });
+      $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+      });
+
+    </script>
+    {% else %}
+     <script src="{% static 'technovate.js'%}"></script>
+     {% endif%}
+</head>
+
+<body>
+
+         <div class="row">
+           <div class="col l4 "></div>
+         <div class="col s12 m12 l4">
+            <div class="card-panel blue-text">
+              <span class="card-title">{{mes}} </span>
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <form id="log_form" action="{% url 'login' %}" method="post">
+                      {% csrf_token %}
+                  <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                       <i class="material-icons prefix">email</i>
+                      <input type="email" name="email" autocomplete="off" required="required" id="email"/>
+                      <label for="email">Email</label>
+                    </div>
+                    <div class="input-field col s12 m12 l12">
+                      <i class="material-icons prefix">vpn_key</i>
+                      <input type="password" name="password" autocomplete="off" required="required" id="password"/>
+                      <label for="password">Password</label>
+                    </div>
+                  </div>
+                    <button type="submit" value="Log In" class="btn waves-effect waves-light blue">Log In<i class="material-icons right">send</i></button>
+                  </form><br>
+                  <a href="{% url 'index'%}"><h6>If you didn't then Sign Up here</h6></a>
+                </div>
+              </div>
+            </div>
+         </div>
+       </div>
+
+
+</body>
+</html>

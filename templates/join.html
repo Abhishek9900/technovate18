@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+<div class="col l1"></div>
+<div class="col s12 m12 l10 blue-text">
+  <div class="card-panel hoverable">
+     <span class="card-title">Login </span>
+     <div class="row">
+       <div class="col s12 m12 l4">
+         <form action="{% url 'login' %}" method="post">
+             {% csrf_token %}
+         <div class="row">
+           <div class="input-field col s12 m12 l12">
+            <!--  <i class="material-icons prefix">email</i>-->
+             <input type="email" name="email" autocomplete="off" required="required" id="email"/>
+             <label for="email">Email</label>
+           </div>
+           <div class="input-field col s12 m12 l12">
+             <!--<i class="material-icons prefix">vpn_key</i>-->
+             <input type="password" name="password" autocomplete="off" required="required" id="password"/>
+             <label for="password">Password</label>
+           </div>
+         </div>
+           <button type="submit" value="Log In" class="btn waves-effect waves-light blue">Log In<i class="material-icons right">send</i></button>
+         </form>
+       </div>
+       <div class="col l1"> </div>
+     </div>
+   </div>
+ </div>
+   <div class="col s12 m12 l10 blue-text">
+     <div class="card-panel hoverable">
+       <span class="card-title">Sign Up </span>
+       <div class="row">
+       <div class="col s12 m12 l7">
+         <form method="post" action="{% url 'register' %}">
+           {% csrf_token %}
+           <div class="row">
+              <div class="input-field col s12 m12 l6">
+              <!-- <i class="material-icons prefix">account_circle</i>-->
+               <input type="text" name="first_name" autocomplete="off" required="required" id="first_name"/>
+               <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s12 m12 l6">
+               <input type="text" name="last_name" autocomplete="off" required="required" id="first_name"/>
+               <label for="last_name">Last Name</label>
+              </div>
+              <div class="input-field col s12 m12 l12">
+                <!-- <i class="material-icons prefix">email</i>-->
+                <input type="email" name="email" autocomplete="off" required="required" id="email"/>
+                <label for="email">Email</label>
+              </div>
+               <div class="input-field col s12 m12 l12">
+                  <!-- <i class="material-icons prefix">school</i>-->
+                   <input type="text" name="institute_uni" id="institute_uni" autocomplete="off" required="required"/>
+                   <label for="institute_uni">Institute</label>
+               </div>
+               <div class="input-field col s12 m12 l12">
+                <!--   <i class="material-icons prefix">call</i>-->
+                   <input type="text" name="phoneno" id="phoneno" autocomplete="off" required="required"/>
+                   <label for="phoneno">Mobile No.</label>
+               </div>
+              <div class="input-field col s12 m12 l12">
+                <!--<i class="material-icons prefix">vpn_key</i>-->
+                <input type="password" name="password" autocomplete="off" required="required" id="password"/>
+                <label for="password">Password</label>
+              </div>
+           </div>
+           <button type="submit" value="Sign Up" class="btn waves-effect waves-light blue">Sign Up<i class="material-icons right">send</i></button>
+       </form>
+       </div>
+     </div>
+  </div>
+</div>
+</div>
+{% endblock %}
