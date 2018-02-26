@@ -81,6 +81,48 @@
     height: 65px;
    }
    </style>
+    
+      <style>
+     #social_links ul li img{
+	width: 100%;
+}
+#social_links{
+	     position: fixed;
+    z-index: 10000;
+    right: -0px;
+    top: 0px;
+    display: flex;
+    height: 100%;
+}
+#social_links  li{
+       width: 70%;
+    height: 25%;
+    overflow: auto;
+    list-style: none;
+}
+#social_links ul{
+	    width: 100%;
+    height: 60%;
+    top: 0px;
+    display: inline-flex;
+    flex-direction: column;
+    bottom: 0px;
+    margin: auto;
+}
+#social_links  li::before{
+    content: '';
+    position: absolute;
+    background-image: url(img/cloud6.png);
+    background-size: 100%;
+    left: -10px;
+    background-position: 0px 28px;
+        width: 80px;
+        z-index: -1;
+    height: 80px;
+    background-repeat: no-repeat;
+}
+
+    </style>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
@@ -102,10 +144,11 @@
          $('#tevents').hide();
          $('#sponsors').hide();
          $('#aboutus').hide();
+         $('#title').hide();
          $('#tech-team').hide();
          $('#workshop').hide();
          $('#title').hide("slow");
-         $('#dashboard').show();
+         $('#dashboard').hide();
          $('#celeb').hide();
          $('.acc-desc').hide();
          $('.homelink').click(function(){
@@ -438,6 +481,19 @@
           $('#workshop').hide("fast");
           $('#dashboard').show("fast");
         });
+           $('.close').click(function(){
+          $('#accomodation-details').hide("slow");
+          $('#privacy-disclaimer').hide("slow");
+          $('#tevents').hide("slow");
+          $('#sponsors').hide("slow");
+          $('#title').show("slow");
+          $('#aboutus').hide("slow");
+          $('.button-collapse').sideNav('hide');
+          $('#tech-team').hide("slow");
+          $('#workshop').hide("slow");
+          $('#GameZone').hide("slow");
+
+        });
         $('.privacy-policy').click(function(){
           $('#tevents').hide("slow");
           $('#sponsors').hide("slow");
@@ -447,6 +503,25 @@
           $('#tech-team').hide("slow");
           $('#dashboard').hide("fast");
           $('#privacy-disclaimer').show("slow");
+        });
+           $('.gameZone').click(function(){
+          $('#tevn1').hide();
+           $('#tevn2').hide();
+           $('#tevn3').hide();
+           $('#tevn4').hide();
+           $('#tevn5').hide();
+           $('#tevn6').hide();
+           $('#ntevn1').hide();
+           $('#ntevn2').hide();
+           $('#ntevn3').hide();
+           $('#ntevn4').hide();
+          $('#tevents').hide("slow");
+          $('#sponsors').hide("slow");
+          $('#title').hide("slow");
+          $('#aboutus').hide("slow");
+          $('.button-collapse').sideNav('hide');
+          $('#tech-team').hide("slow");
+          $('#GameZone').show("slow");
         });
 
        });
@@ -518,21 +593,23 @@
       <a class="brand-logo hide-on-med-and-down left indexlink" href="#"><img class="brand-logo" id ="navbar-logo-official" src="{% static 'logo_mini.png' %}"></a>
       <a href="#" id="btnc" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="tooltipped homelink" data-position="bottom" data-delay="50" data-tooltip="Go back to home" href="#" >HOME</a></li>
-          <li><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Explore events..." href="{% url 'events'%}">EVENTS</a></li>
-          <li><a class="tooltipped workshoplink" data-position="bottom" data-delay="50" data-tooltip="View Workshop" href="#">WORKSHOP</a></li>
-          <li><a class="tooltipped teamlink" data-position="bottom" data-delay="50" data-tooltip="Meet the team.." href="#">OUR TEAM</a></li>
-          <li><a class="tooltipped sponsorslink" data-position="bottom" data-delay="50" data-tooltip="View sponsors" href="#">SPONSORS</a></li>
-          <li><a class="tooltipped accomodation" data-position="bottom" data-delay="50" data-tooltip="Hospitality" href="#">HOSPITALITY</a></li>
-          <li><a class="tooltipped celeb" data-position="bottom" data-delay="50" data-tooltip="Celeb" href="#">CELEB NIGHT</a></li>
+          <li><a class="homelink" href="#" >HOME</a></li>
+          <li><a href="{% url 'events'%}">EVENTS</a></li>
+          <li><a class="gameZone">GAMEZONE</a></li>
+          <li><a class="workshoplink" href="#">WORKSHOP</a></li>
+          <li><a class="teamlink" href="#">OUR TEAM</a></li>
+          <li><a class="sponsorslink" href="#">SPONSORS</a></li>
+          <li><a class="accomodation" href="#">HOSPITALITY</a></li>
+          <li><a class="celeb"  href="#">CELEB NIGHT</a></li>
+          <li><a class="aboutlink" href="#">ABOUT US</a></li>
           {% if request.user.is_authenticated %}
-            <li><a class="tooltipped dashboardlink" data-position="bottom" data-delay="50" data-tooltip="Go to dashboard"  href="#"><i class="material-icons">dashboard</i></a></li>
-            <li><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Log Out" href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i></a></li>
+            <li><a class="dashboardlink" href="{% url 'interface' %}">DASHBOARD</a></li>
+            <li><a href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i></a></li>
             {% else %}
-          <li><a class="modal-trigger" href="#modal1">REGISTER</a></li>
+          <li><a class="modal-trigger" href="{% url 'sign_up' %}">REGISTER</a></li>
+            <li><a class="modal-trigger" href="{% url 'sign_in' %}">LOGIN</a></li>
           <li><a class="modal-trigger" href="#modal2">CAMPUS AMBASSADOR</a></li>
           {% endif %}
-          <li><a class="tooltipped aboutlink" data-position="bottom" data-delay="50" data-tooltip="Vision" href="#">ABOUT US</a></li>
         </ul>
         </div>
     </nav>
@@ -547,7 +624,6 @@
         <li><a href="#" class="teamlink"><i class="material-icons">supervisor_account</i>OUR TEAM</a></li>
         <li>
           {% if request.user.is_authenticated %}
-          <li><a class="dashboardlink" href="#"><i class="material-icons">dashboard</i>DASHBOARD</a></li>
           <li><a href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i>LOGOUT</a></li>
           {% else %}
           <li><a class="modal-trigger" href="#modal1"><i class="material-icons">account_circle</i>REGISTER/LOGIN</a></li>
@@ -564,6 +640,15 @@
 
       <div id="title">
        <div class="container" id="top">
+           <div id="social_links">
+	     <ul>
+	     	<li><a target='_blank' class="fb" target="_blank" href="https://www.facebook.com/technovate.iiitnr/"><img src="{% static 'data/img/social/fb.png' %}"></a></li>
+	     	<li><a target='_blank' class="gp" target="_blank" href="technovate@iiitnr.ac.in"><img src="{% static 'data/img/social/google_plus.png' %}"></a></li>
+	     	<li><a target='_blank' class="yt" target="_blank" href="https://www.youtube.com/watch?v=nxgXux1dXss"><img src="{% static 'data/img/social/youtube.png' %}"></a></li>
+	     	<li> <a target='_blank' class="tw" target="_blank" href="https://www.twitter.com/technovate.iiitnr"><img src="{% static 'data/img/social/twitter.png' %}"></a></li>
+	     	<li><a target='_blank' class="ln" target="_blank" href="https://www.instagram.com/technovate_iiitnr"><img src="{% static 'data/img/social/instagram.png' %}"></a></li>
+	     </ul>
+	   </div>
           <center><img src="{% static 'banner_2018.png'%}" id="main" class="main-index-image"></center>
           <center>
             
@@ -636,13 +721,12 @@
 
     <div id="workshop" >
         <div class="row">
-            <div class="col s12 m12 l12 center white-text"><br><h4>WORKSHOP</h4>
+            <h4 class="center white-text">WORKSHOPS</h4>
+            <div class="col s6 m6 l6 center white-text"><br>
               <br>
               <img class="responsive-img" src="{% static 'event_logo/networking.jpg'%}">
             </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m12 l12 center white-text">
+            <div class="col s6 m6 l6 center white-text"><br>
               <br>
               <img class="responsive-img" src="{% static 'event_logo/cadence_technovate.png'%}">
             </div>
@@ -783,17 +867,6 @@
                     <div class="col s112 m12 l12 center">
                         
                         <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
-                        <h5 class="white-text">Hansa Meghwani</h5>
-                        <a class="white-text" href="mailto:hansa15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
-                        <h6 class="white-text">Head Cultural</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m12 l4">
-                <div class="row">
-                    <div class="col s112 m12 l12 center">
-                        
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
                         <h5 class="white-text">Sourav Kunal</h5>
                         <a class="white-text" href="mailto:sourav15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
                         <h6 class="white-text">Hospitality</h6>
@@ -874,7 +947,31 @@ or other benefits.</p>
   </div>
   </div>
 <!-- -->
+<!-- GameZone -->
+  <div class="acc-desc" id="GameZone">
+  <div class="row">
+  <div class="col s9 m9 l9 white-text"><h4>GameZone</h4></div>
+  <a class="close" href="#"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i></a>
+    <div class="col s12 m12 l6">
+    <h4 class="white-text">Counter Strike</h4>
+      <img class="responsive-img" src="{% static 'event_logo/fire_in_hole.png'%}">
+    </div>
+    <div class="col s12 m12 l6">
+    <h4 class="white-text">Fifa 15</h4>
+      <img  class="responsive-img" src="{% static 'event_logo/fifa4.png'%}">
+    </div>
+    <div class="col s12 m12 l12 white-text">
+      <center><p class="event-details"> 
+     Take your mind off the technical extravaganza and take a dive into the game zone, here we have FIFA and Counter strike for you, and guess what, if you have participated in any event, this is free of cost for you, if not then pay the minimal price of Rs. 100 and play these games, also gain access to participate in all of our technical events and not only it is just recreational gaming, but rather a contest where winner takes home a big reward, so Get Set Play.<br>Prizes worth Rs 3k and 2k for Counter Strike and FIFA respectively
+    <br>Eat, Game, Win, Repeat
 
+    </p>
+
+       </center><br>
+<center><p class="event-details white-text btn disabled">Registeration will start after January</p></center>
+    </div>
+  </div>
+  </div>
 <!-- Sponsors  -->
     <div id="sponsors">
         <div class="container">
@@ -954,176 +1051,8 @@ or other benefits.</p>
 
 </div>
 <!-- Event View 1st version-->
-   <div id="events">
-
-   </div>
    {% if request.user.is_authenticated %}
-   <div id = "dashboard" class="row">
-   
-   <div class="col s12 m12 l12 white-text">
-     <div id="basic_dash" class="">
-       <span class="card-title center-align">
-         <!--<i class="material-icons medium center">dashboard</i>-->
-       </span>
-         <center>  <h5>Dashboard</h5></center>
-       <hr>
-      <div class="row hide-on-med-and-down">
-        <!--<div class="col s4"></div>-->
-        <div class="col s8 m8 l4">
-         <!-- {% if full_name %}-->
-          
-          <center>
-              <i class="material-icons medium center ">account_circle</i>
-            <h6>{{ request.user.get_full_name }}</h6></center>
-          <!--{% endif %}-->
-        </div>
-         <!--<div class="col s4"></div>-->
-        <div class="col s8 m8 l4">
-          <!--{% if phone_no %}-->
-         
-          <center>
-              <i class="material-icons medium ">contact_phone</i>
-            <h6>{{ request.user.profile.get_phone_no }}</h6></center>
-         <!-- {% endif %}-->
-        </div>
-         <!--<div class="col s4 "></div>-->
-        <div class="col s8 m8 l4">
-          <!--{% if institute %}-->
-          
-          <center>
-              <i class="material-icons medium ">work</i>
-            <h6>{{ request.user.profile.get_Institute_Uni }}</h6></center>
-         <!-- {% endif %} -->
-        </div>
-      </div>
-      <div class="row hide-on-large-only">
-        <div class="col s3 m3 l4">
-         <!-- {% if full_name %}-->
-          
-          <center>
-              <i class="material-icons medium ">account_circle</i>
-            <h6>{{ request.user.get_full_name }}</h6></center>
-          <!--{% endif %}-->
-        </div>
-         <div class="col s1 m1"></div>
-        <div class="col s3 m3 l4">
-          <!--{% if phone_no %}-->
-          
-          <center>
-              <i class="material-icons medium ">contact_phone</i>
-            <h6>{{ request.user.profile.get_phone_no }}</h6></center>
-         <!-- {% endif %}-->
-        </div>
-         <div class="col s1 m1"></div>
-        <div class="col s3 m3 l4">
-          <!--{% if institute %}-->
-          
-          <center>
-              <i class="material-icons medium ">work</i>
-            <h6>{{ request.user.profile.get_Institute_Uni }}</h6></center>
-         <!-- {% endif %} -->
-        </div>
-      </div>
-      <hr>
-     <div class="row">
-       <div class="col s12 m12 l6 white-text">
-         {% if request.user.profile.is_active %}
-         <h6>Select Event</h6>
-         <form action="{%url 'enroll'%}" method="post">
 
-           {% csrf_token %}
-             <div class="input-field col s12">
-               <select name="event">
-                 <optgroup label="Technical">
-                   <option value="Game of Codes" name="Game of Codes">Game of Codes</option>
-                   <option value="Wolf of Web Street" name="Wolf of Web Street">Wolf of Web Street</option>
-                   <option value="Backyard Data Science" name="Backyard Data Science">Backyard Data Science</option>
-                   <option value="Flying Syndrom" name="Flying Syndrom">Flying Syndrom</option>
-                   <option value="Questa" name="Questa">Questa</option>
-                   <option value="Robo Dangal" name="Robo Dangal">Robo Dangal</option>
-                   <option value="Robo Soccer" name="Robo Soccer">Robo Soccer</option>
-                   <option value="Pursuit of Appieness" name="Pursuit of Appieness">Pursuit of Appieness</option>
-                   <option value="Wired" name="Wired">Wired</option>
-                 </optgroup>
-                 <optgroup label="Non Technical">
-                   
-                   <option value="Treasure Hunt" name="Treasure Hunt">Tresure Hunt</option>
-                   <option value="Footloose" name="Footloose">Footloose</option>
-                 </optgroup>
-                 <optgroup label="Game Zone">
-                   <option value="Counter Strike" name="Counter Strike">Counter Strike</option>
-                   <option value="Fifa 15" name="Fifa 15">Fifa 15</option>
-                 </optgroup>
-               </select>
-               <!--<label><h5>Event Select</h5></label>-->
-             </div>
-             <button type="submit" class="btn waves-effect waves-light grey darken-3 disabled">Save</button>
-           </form>
-           {% if request.user.profile.number_of_team_members %}
-                <h5 class="white-text">Number of team mates {{ request.user.profile.get_no_of_team_membmers }}</h5>
-                {% else %}
-                <div id="no-of-tema">
-                    <h5 class="white-text">Number of team mates {{ request.user.profile.get_no_of_team_membmers }}</h5>
-                </div>
-           <form action="#" id="team-form">
-            {% csrf_token %}
-            <div class="input-field col s12">
-              <input type="text" name="number" id="number" placeholder="Number of persons with you">
-              <button type="submit" class="btn waves-effect waves-light grey darken-3">Save</button>
-            </div>
-           </form>
-           {% endif %}
-           <h5 class="white-text">Hospitality : {{ request.user.profile.is_hosp }}</h5>
-           {% if request.user.profile.is_hosp %}
-           {% else %}
-             <form id="hospitality-form" action="#">
-               {% csrf_token %}
-               <input type="text" name="room" id="room" placeholder="Do you want hospitality [Y/N] ?">
-                <button type="submit" class="btn waves-effect waves-light grey darken-3">Save</button>
-             </form>
-           {% endif %}
-         {%else%}
-            <p style="color:red"> Your account is not activated. In order to activate please click on verify button.</p>
-            <a href="{% url 'sendchitti'%}"><button class="btn waves-effect waves-light red">Verify</button></a>
-            {% endif %}
-         </div>
-         <div class="col s12 m12 l6">
-           {% if request.user.profile.events.all %}
-             <h6>Participated in following events</h6>
-             <ul>
-             {% for t in request.user.profile.events.all %}
-               <li>{{t}}</li>
-               {%endfor%}
-             </ul>
-               <!--<strong><h6 style="color:green">"We will be initiate registration for events soon this is only for testing purpose And we will ping you when it wil start"</h6></strong>-->
-               {%endif%}
-         </div>
-         <div class="col s12 m12 l6">
-         <strong><h5 style="color:green">"Event registration started."</h5></strong>
-         
-          <h5 style="color:red">Payment status : {{ request.user.profile.is_paid }}</h5>
-          <h5 style="color:red">Amount Due : {{ request.user.profile.payment_to_be_paid }}</h5>
-           <h5 style="color:white">Payment Details</h5>
-           <ul>
-             <h6><li>Pay Rs 250/- per head, For comming to Technovate and participating in various events and get celeb pass</li></h6>
-             <h6><li>Pay Rs 300/- per head for celeb pass</li></h6>
-             <h6><li>Pay Rs 500/- per head for accomodation for 2 nights</li></h6>
-           </ul>
-           <em>Note: <ul>
-             <h6><li> * Above charges are per head. If you have team member with you need to pay more amount.</li></h6>
-             <h6><li> * Pay after all selection and benifits selected./li></h4>
-             <h6><li> * We will be adding payment portal soon.</li></h6>
-             <h6><li> * For participants celeb is free.</li></h6>
-             <h6><li> * If paid amount it will be reflect here after 24hrs and bring receipt.</li></h6>
-             <h6><li> * Bring details of registration. <a href="#" id="send_details">Click here to email details</a></li></h6>
-           </ul></em>
-           <a href="#" class="btn grey waves">Pay Offline</a> | <a href="#" class="btn grey waves">Pay Online</a>
-           <!--<h6 style="color:green">If you have team members with you then at the time of reporting you need to pay extra amount for team members each Rs 250/-</h6>-->
-         </div>
-       </div>
-     </div>
-   <div class="col  l3"></div>
-   </div>
    {% else %}
 
    <!-- Campus Ambassador Form Modal -->
@@ -1167,7 +1096,7 @@ or other benefits.</p>
               <span class="card-title">Login </span>
               <div class="row">
                 <div class="col s12 m12 l4">
-                  <form id="log_form" action="{% url 'login' %}" method="post">
+                  <form id="log_form" method="post">
                       {% csrf_token %}
                   <div class="row">
                     <div class="input-field col s12 m12 l12">
@@ -1187,7 +1116,7 @@ or other benefits.</p>
                 <div class="col s12 m12 l1"></div>
                 <div class="col s12 m12 l7 grey-text darken-3">
                   <span class="card-title">Sign Up </span>
-                  <form action="{% url 'register'%}"method="post">
+                  <form method="post">
                     {% csrf_token %}
                     <div class="row">
                        <div class="input-field col s12 m12 l6">
