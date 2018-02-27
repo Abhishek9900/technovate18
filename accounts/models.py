@@ -41,7 +41,7 @@ class Member(models.Model):
     institute = models.CharField(max_length=500)
     event = MultiSelectField(choices=choice2)
     accomodation = models.BooleanField(default=False)
-    total = models.IntegerField(default=0)
+    total = models.IntegerField(default=250)
     
     def __str__(self):
         return self.name + ' - ' + self.mobile + ' - ' + self.institute

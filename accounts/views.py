@@ -82,7 +82,10 @@ def interface(request):
         for m in members:
             total+=m.total
     profile.gtotal = total
-    profile.save()
+    try:
+        profile.save()
+    except:
+        profile.save(request.user or None)
     form = MemberForm()
     if request.method == 'POST':
         form = MemberForm(request.POST)
