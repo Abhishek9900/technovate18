@@ -160,7 +160,7 @@
                $('#sponsors').slideToggle("slow");
                $('#why').show();
 
-
+               $('#celeb').hide();
                $('#tevn1').hide();
                $('#tevn2').hide();
                $('#tevn3').hide();
@@ -180,7 +180,7 @@
                $('.button-collapse').sideNav('hide');
                $('#aboutus').show("slow");
                $('#why').show();
-
+               $('#celeb').hide();
 
                $('#tevn1').hide();
                $('#tevn2').hide();
@@ -361,6 +361,9 @@
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
           $('.modal-trigger').leanModal();
       });
+        $(document).ready(function() {
+      $('select').material_select();
+    });
 
       $(document).ready(function(){
           $('.carousel.carousel-slider').carousel({full_width: true});
@@ -376,7 +379,7 @@
       });
     </script>
     {% else %}
-     <script src="{% static 'tech.js'%}"></script>
+     <script src="{% static 'technovate1.js'%}"></script>
      {% endif%}
      <script type="text/javascript">
        $(document).ready(function(){
@@ -486,27 +489,20 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div id="loader">
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-</div>
-<!--<div id="particles-js"></div>-->
 <!-- Navigation Panel -->
 <div id='stars'></div>
   <div id='stars2'></div>
   <div id='stars3'></div>
 <div class="navbar">
   <nav class="transparent">
-    <div class="nav-wrapper">
+    <div class="nav-wrapper ">
       <a class="brand-logo hide-on-med-and-down left indexlink" href="#"><img class="brand-logo" id ="navbar-logo-official" src="{% static 'logo_mini.png' %}"></a>
-    <!--  <a class="barnd-logo" id="indexlink" href="#">" CREATE INNOVATE TECHNOVATE"</a>-->
-      <a href="#" id="btnc" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" id="btnc" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="homelink" href="{% url 'index' %}">HOME</a></li>
-          <li><a class="techeventslink">EVENTS</a></li>
+          <li><a class="homelink" href="{% url 'index' %}" >HOME</a></li>
+          <li><a href="{% url 'events'%}">EVENTS</a></li>
           <li><a class="gameZone">GAMEZONE</a></li>
-          <li><a class="workshoplink" href="#">WORKSHOP</a>
+          <li><a class="workshoplink" href="#">WORKSHOP</a></li>
           <li><a class="teamlink" href="#">OUR TEAM</a></li>
           <li><a class="sponsorslink" href="#">SPONSORS</a></li>
           <li><a class="accomodation" href="#">HOSPITALITY</a></li>
@@ -516,38 +512,48 @@
             <li><a class="dashboardlink" href="{% url 'interface' %}">DASHBOARD</a></li>
             <li><a href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i></a></li>
             {% else %}
-           <li><a class="modal-trigger" href="{% url 'sign_up' %}">REGISTER</a></li>
+          <li><a class="modal-trigger" href="{% url 'sign_up' %}">REGISTER</a></li>
             <li><a class="modal-trigger" href="{% url 'sign_in' %}">LOGIN</a></li>
           <li><a class="modal-trigger" href="#modal2">CAMPUS AMBASSADOR</a></li>
           {% endif %}
         </ul>
         </div>
     </nav>
-    <ul id="slide-out" class="side-nav">
+    <ul id="mobile-demo" class="side-nav">
         <li class="logo"><a href="#" class="indexlink brand-logo">
-          <img src="{% static 'TECHNOVATE_beta.png'%}">
+          <img src="{% static 'index_back_Y.jpg'%}">
         </a></li><br><br><li><div class="divider"></div></li>
-        <li><a href="#" class="homelink"><i class="material-icons">home</i>HOME</a></li>
-        <li><a class="techeventslink"><i class="material-icons">event</i>EVENTS</a></li>
-        <li><a class="gameZone"><i class="material-icons">videogame_asset</i>GAMEZONE</a></li>
-        <!--<li><a class="workshoplink" href="#"><i class="fa fa-cogs" aria-hidden="true"></i>WORKSHOP</a></li>-->
-        <li><a href="#" class="sponsorslink"><i class="material-icons">monetization_on</i>SPONSORS</a></li>
-        <li><a href="#" class="teamlink"><i class="material-icons">supervisor_account</i>
-OUR TEAM</a></li>
+        <li><a href="{% url 'index' %}" class="homelink"><i class="material-icons">home</i>HOME</a></li>
+        <li><a href="{%url 'events'%}"><i class="material-icons">event</i>EVENTS</a></li>
+        <li><a href="#" class="sponsorslink"><i class="material-icons">monetization_on</i>PREVIOUS SPONSORS</a></li>
+        <li><a href="#" class="teamlink"><i class="material-icons">supervisor_account</i>OUR TEAM</a></li>
         <li>
           {% if request.user.is_authenticated %}
+             <li><a class="dashboardlink" href="{% url 'interface' %}"><i class="material-icons">dashboard</i>DASHBOARD</a></li>
           <li><a href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i>LOGOUT</a></li>
           {% else %}
-          <a class="modal-trigger" id="joinID" href="{% url 'join'%}"><i class="material-icons">account_circle</i>REGISTER/LOGIN</a></li>
+          <li><a class="modal-trigger" href="{% url 'sign_up' %}"><i class="material-icons">account_box</i>REGISTER</a></li>
+        <li><a class="modal-trigger" href="{% url 'sign_in' %}"><i class="material-icons">account_circle</i>LOGIN</a></li>
           <li><a class="modal-trigger" href="#modal2"><i class="fa fa-user-o"></i>CAMPUS AMBASSADOR</a></li>
           {% endif %}
-          <li><a href="#" class="accomodation"><i class="material-icons">local_hotel</i>Hospitality</a></li>
-          <li><a  target="_blank" href="https://www.google.com/maps/dir/Current+Location/IIIT-NR"><i class="material-icons">directions</i>REACH US</a></li>
+          <!--<li><a href="#" class="accomodation"><i class="material-icons">local_hotel</i>HOSPITALITY</a></li>-->
+          <li><a target="_blank" href="https://www.google.com/maps/dir/Current+Location/IIIT-NR"><i class="material-icons">directions</i>REACH US</a></li>
           <li><a  href="#" class="aboutlink"><i class="material-icons">info_outline</i>ABOUT US</a></li>
           <li><a href="#" class="privacy-policy"><i class="material-icons">import_contacts</i>PRIVACY</a></li>
         </ul>
   </div>
 
+    <div id="celeb">
+         <center>
+           <h3 class="white-text">Celeb Night</h3>
+             <div class="col s12 m12 l12 center white-text">
+              <br>
+              <img class="responsive-img" src="{% static 'event_logo/coming.png'%}">
+            </div>
+             
+         </center>
+       </div>
+    
   <div id="title">
       <div class="container">
          <center><img src="{% static 'banner_2018.png'%}" id="main" class="main-index-image"></center>
@@ -604,27 +610,26 @@ OUR TEAM</a></li>
        </div>
 
 
-
 <!-- Events-->
   <div id="tevents">
           <div class="grid">
     <ul id="hexGrid">
       <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/Appiness.pdf' %}">
             <div class='img' id="imgn1" style="background-image:url('{% static 'img/1.png' %}');"></div>
-              <h1 id="demo1">This is a title</h1>
-              <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              <h1 id="demo1">Appiness</h1>
+              <p id="demo2">Mobile App Development competition.</p>
           </a>
         </div>
       </li>
         
       <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/BackyardDataScience.pdf' %}">
                 <div class='img' style="background-image: url('{% static 'img/2.jpg' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Backyard Data Science</h1>
+            <p id="demo2">Data science & ML competition.</p>
           </a>
         </div>
       </li>
@@ -632,108 +637,108 @@ OUR TEAM</a></li>
         <div class="hexIn">
           <a class="hexLink" href="{% static 'documents/Wolf_of_webstreet_Technovate_IIITNR.pdf' %}">
             <div class='img' style="background-image: url('{% static 'img/3.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Wolf of Web street</h1>
+            <p id="demo2">Web development competition.</p>
           </a>
         </div>
       </li>
       <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/GameofCodes.pdf' %}">
             <div class='img' style="background-image: url('{% static 'img/4.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Game of Codes</h1>
+            <p id="demo2">Competitive coding competition.</p>
           </a>
         </div>
       </li>
       <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/Robo_Soccer_Technovate_IIITNR.pdf' %}">
             <div class='img' style="background-image: url('{% static 'img/5.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Robo Soccer</h1>
+            <p id="demo2">Robotics soccer competition.</p>
           </a>
         </div>
       </li>
       <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/Flying_Syndrome.pdf' %}">
          <div class='img' style="background-image: url('{% static 'img/6.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Flying SynDRONE</h1>
+            <p id="demo2">Drone flying competition.</p>
           </a>
         </div>
       </li>
       <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/GameofCodes.pdf' %}">
             <div class='img' style="background-image: url('{% static 'img/7.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Capriccio</h1>
+            <p id="demo2">Singing competition.</p>
           </a>
         </div>
       </li>
       <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
-            <div class='img' style="background-image: url('{% static 'img/8.jpg' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+          <a class="hexLink" href="{% static 'documents/DanceFever.pdf' %}">
+            <div class='img' style="background-image: url('{% static 'img/8.png' %}');"></div>
+            <h1 id="demo1">Dance Fever</h1>
+            <p id="demo2">Dancing competition.</p>
           </a>
         </div>
       </li>
       <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/Treasure-Hunt.pdf' %}">
             <div class='img' style="background-image: url('{% static 'img/9.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Treasure Hunt.</h1>
+            <p id="demo2">Adventurous competition.</p>
           </a>
         </div>
       </li>
       
      <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/Questa.pdf' %}">
             <div class='img' style="background-image:url('{% static 'img/10.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Questa</h1>
+            <p id="demo2">Quiz competition.</p>
           </a>
         </div>
       </li>
         <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/RoboDangal.pdf' %}">
             <div class='img' style="background-image: url('{% static 'img/11.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Robo Dangal</h1>
+            <p id="demo2">Robo Duel competition.</p>
           </a>
         </div>
       </li>
           <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/enkindle_problem_statement.pdf' %}">
                 <div class='img' style="background-image: url('{% static 'img/12.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Enkindle</h1>
+            <p id="demo2">Business pitching competition.</p>
           </a>
         </div>
       </li>
         <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/DIZHARD.pdf' %}">
             <div class='img' style="background-image: url('{% static 'img/13.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Dizhard</h1>
+            <p id="demo2">Hardware circuit designing competition.</p>
           </a>
         </div>
       </li>
         <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink" href="{% static 'documents/nukkad_natak2k18.pdf' %}">
             <div class='img' style="background-image: url('{% static 'img/14.png' %}');"></div>
-            <h1 id="demo1">This is a title</h1>
-            <p id="demo2">Some sample text about the article this hexagon leads to</p>
+            <h1 id="demo1">Nukkad Natak</h1>
+            <p id="demo2">Role play competiton.</p>
           </a>
         </div>
       </li>
@@ -741,16 +746,6 @@ OUR TEAM</a></li>
       </div>
     </div>
     
-     <div id="celeb">
-         <center>
-           <h3 class="white-text">Celeb Night</h3>
-             <div class="col s12 m12 l12 center white-text">
-              <br>
-              <img class="responsive-img" src="{% static 'event_logo/coming.png'%}">
-            </div>
-             
-         </center>
-       </div>
 
      <div id="workshop" >
         <div class="row">
@@ -768,22 +763,24 @@ OUR TEAM</a></li>
      
 
 <!-- TEAM VIEW -->
-    <div id="tech-team">
-      <div class="container">
+     <div id="tech-team">
+      <div class="container-fluid">
         <div class="row">
             <div class="col s12 m12 l12">
                 <center>
                     <h4 class="white-text">Organizing Team</h4>
                 </center>
             </div>
+            <div class="row">
             <div class="col s12 m12 l4">
                 <div class="row">
                     <div class="col s112 m12 l12 center">
                         
                         <img class="responsive-img circle" src="{% static 'Team/rajat.jpg'%}">
                         <h5 class="white-text">Rajat Gupta</h5>
-                        <a class="white-text" href="mailto:rajat15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                         <h6 class="white-text">Overall Coordinator</h6>
+                        <p class="white-text">Contact: 7587745898</p>
+                        <a class="white-text" href="mailto:rajat15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                     </div>
                 </div>
             </div>
@@ -793,8 +790,9 @@ OUR TEAM</a></li>
                         
                         <img class="responsive-img circle" src="{% static 'Team/apurv.jpg'%}">
                         <h5 class="white-text">Apurv Saha</h5>
-                        <a class="white-text" href="mailto:apurv15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                         <h6 class="white-text">Overall Coordinator</h6>
+                        <p class="white-text">Contact: 9340300741</p>
+                        <a class="white-text" href="mailto:apurv15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                     </div>
                 </div>
             </div>
@@ -802,21 +800,101 @@ OUR TEAM</a></li>
                 <div class="row">
                     <div class="col s112 m12 l12 center">
                         
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                        <img class="responsive-img circle" src="{% static 'Team/sanskar.jpg'%}">
                         <h5 class="white-text">Sanskar Patel</h5>
-                        <a class="white-text" href="mailto:sanskar15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                         <h6 class="white-text">Overall Coordinator</h6>
+                        <p class="white-text">Contact: 8319193168</p>
+                        <a class="white-text" href="mailto:sanskar15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col s12 m12 l4">
+                <div class="row">
+                    <div class="col s112 m12 l12 center">
+                        
+                        <img class="responsive-img circle" src="{% static 'Team/pragya.jpg'%}">
+                        <h5 class="white-text">Pragya Vedita</h5>
+                        <h6 class="white-text">Sponsorship</h6>
+                        <p class="white-text">Contact: 7869257247</p>
+                        <a class="white-text" href="mailto:pragya15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                     </div>
                 </div>
             </div>
             <div class="col s12 m12 l4">
+                <div class="row">
+                    <div class="col s112 m12 l12 center">
+                        
+                        <img class="responsive-img circle" src="{% static 'Team/ananya.jpg'%}">
+                        <h5 class="white-text">Ananya Shrivastav</h5>
+                        <h6 class="white-text">Sponsorship</h6>
+                        <p class="white-text">Contact: 7587364524</p>
+                        <a class="white-text" href="mailto:ananya15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 l4">
+                <div class="row">
+                    <div class="col s112 m12 l12 center">
+                        
+                        <img class="responsive-img circle" src="{% static 'Team/hansa.JPG'%}">
+                        <h5 class="white-text">Hansa Meghwani</h5>
+                        <h6 class="white-text">Cultural Events Head</h6>
+                        <p class="white-text">Contact: 8602930880</p>
+                        <a class="white-text" href="mailto:hansa15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col s12 m12 l4">
+                <div class="row">
+                    <div class="col s112 m12 l12 center">
+                        
+                        <img class="responsive-img circle" src="{% static 'Team/ashish.jpg'%}">
+                        <h5 class="white-text">Ashish Upadhyay</h5>
+                        <h6 class="white-text">CSE Events Head</h6>
+                        <p class="white-text">Contact: 8853798181</p>
+                        <a class="white-text" href="mailto:ashish15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 l4">
+                <div class="row">
+                    <div class="col s112 m12 l12 center">
+                        
+                        <img class="responsive-img circle" src="{% static 'Team/akash.jpeg'%}">
+                        <h5 class="white-text">Akash Kumar</h5>
+                        <h6 class="white-text">ECE Events Head</h6>
+                        <p class="white-text">Contact: 8817704739</p>
+                        <a class="white-text" href="mailto:akash15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                    </div>
+                </div>
+            </div>
+             <div class="col s12 m12 l4">
                 <div class="row">
                     <div class="col s112 m12 l12  center">
                         
                         <img class="responsive-img circle" src="{% static 'Team/yashk.jpg'%}">
                         <h5 class="white-text">Yash Kirti Sinha</h5>
-                        <a class="white-text" href="mailto:yash15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
                         <h6 class="white-text">Marketing & Promotion</h6>
+                        <p class="white-text">Contact: 8718080927</p>
+                        <a class="white-text" href="mailto:yash15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+             <div class="col s12 m12 l4">
+                <div class="row">
+                    <div class="col s112 m12 l12  center">
+                        
+                        <img class="responsive-img circle" src="{% static 'Team/sumit.jpg'%}">
+                        <h5 class="white-text">Sumit Jatwar</h5>
+                        <h6 class="white-text">Marketing & Promotion</h6>
+                        <p class="white-text">Contact: 7771090490</p>
+                        <a class="white-text" href="mailto:sumit15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
                     </div>
                 </div>
             </div>
@@ -824,10 +902,11 @@ OUR TEAM</a></li>
                 <div class="row">
                     <div class="col s112 m12 l12 center">
                         
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                        <img class="responsive-img circle" src="{% static 'Team/yasha.jpg'%}">
                         <h5 class="white-text">Yash Aavart Pathak</h5>
+                        <h6 class="white-text">Event Management</h6>
+                        <p class="white-text">Contact: 9753658260</p>
                         <a class="white-text" href="mailto:yash15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
-                        <h6 class="white-text">Event Management</h6>
                     </div>
                 </div>
             </div>
@@ -835,80 +914,31 @@ OUR TEAM</a></li>
                 <div class="row">
                     <div class="col s112 m12 l12 center">
                         
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                        <img class="responsive-img circle" src="{% static 'Team/shrishti.jpg'%}">
                         <h5 class="white-text">Shristi Agrawal</h5>
-                        <a class="white-text" href="mailto:shristi15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                         <h6 class="white-text">Event Management</h6>
+                        <p class="white-text">Contact: 7898465200</p>
+                        <a class="white-text" href="mailto:shristi15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                     </div>
                 </div>
             </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l4"></div>
             <div class="col s12 m12 l4">
                 <div class="row">
                     <div class="col s112 m12 l12 center">
                         
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
-                        <h5 class="white-text">Pragya Vedita</h5>
-                        <a class="white-text" href="mailto:pragya15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
-                        <h6 class="white-text">Sponsorship</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m12 l4">
-                <div class="row">
-                    <div class="col s112 m12 l12 center">
-                        
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
-                        <h5 class="white-text">Ananya Shrivastav</h5>
-                        <a class="white-text" href="mailto:ananya15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
-                        <h6 class="white-text">Sponsorship</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m12 l4">
-                <div class="row">
-                    <div class="col s112 m12 l12 center">
-                        
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
-                        <h5 class="white-text">Ashish Upadhyay</h5>
-                        <a class="white-text" href="mailto:ashish15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
-                        <h6 class="white-text">CSE Events Head</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m12 l4">
-                <div class="row">
-                    <div class="col s112 m12 l12 center">
-                        
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
-                        <h5 class="white-text">Akash Kumar</h5>
-                        <a class="white-text" href="mailto:akash15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
-                        <h6 class="white-text">ECE Events Head</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m12 l4">
-                <div class="row">
-                    <div class="col s112 m12 l12 center">
-                        
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
-                        <h5 class="white-text">Hansa Meghwani</h5>
-                        <a class="white-text" href="mailto:hansa15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
-                        <h6 class="white-text">Cultural</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m12 l4">
-                <div class="row">
-                    <div class="col s112 m12 l12 center">
-                        
-                        <img class="responsive-img circle" src="{% static 'Team/account-profile-default.png'%}">
+                        <img class="responsive-img circle" src="{% static 'Team/sourav.jpg'%}">
                         <h5 class="white-text">Sourav Kunal</h5>
-                        <a class="white-text" href="mailto:sourav15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
                         <h6 class="white-text">Hospitality</h6>
+                        <p class="white-text">Contact: 9801732429</p>
+                        <a class="white-text" href="mailto:sourav15100@iiitnr.edu.in"><i class="material-icons">email</i></a>
                     </div>
                 </div>
             </div>
-             
+            <div class="col s12 m12 l4"></div>
+            </div>
         </div>
     </div>
        
@@ -983,90 +1013,139 @@ or other benefits.</p>
 <!-- GameZone -->
   <div class="acc-desc" id="GameZone">
   <div class="row">
-  <div class="col s9 m9 l9 white-text"><h4>GameZone</h4></div>
+  <div class="col s12 m12 l12 white-text center"><h4>GameZone</h4></div>
   <a class="close" href="#"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i></a>
-    <div class="col s12 m12 l6">
-    <h4 class="white-text">Counter Strike</h4>
-      <img class="responsive-img" src="{% static 'event_logo/fire_in_hole.png'%}">
+    <div class="col s8 m8 l8">
+      <img class="responsive-img" src="{% static 'img/gamers_crusade.jpg'%}">
     </div>
-    <div class="col s12 m12 l6">
-    <h4 class="white-text">Fifa 15</h4>
-      <img  class="responsive-img" src="{% static 'event_logo/fifa4.png'%}">
-    </div>
-    <div class="col s12 m12 l12 white-text">
+    <div class="col s4 m4 l4 white-text">
       <center><p class="event-details"> 
      Take your mind off the technical extravaganza and take a dive into the game zone, here we have FIFA and Counter strike for you, and guess what, if you have participated in any event, this is free of cost for you, if not then pay the minimal price of Rs. 100 and play these games, also gain access to participate in all of our technical events and not only it is just recreational gaming, but rather a contest where winner takes home a big reward, so Get Set Play.<br>Prizes worth Rs 3k and 2k for Counter Strike and FIFA respectively
     <br>Eat, Game, Win, Repeat
 
     </p>
-
        </center><br>
-<center><p class="event-details white-text btn disabled">Registeration will start after January</p></center>
+        <center><a href="{% url 'sign_up' %}"><p class="event-details white-text btn">Registeration started!</p></a></center>
     </div>
   </div>
   </div>
 <!-- -->
 <!-- Sponsors  -->
-    <div id="sponsors">
-      <div class="container">
-          <div class="row">
+       <div id="sponsors">
+        <div class="container-fluid">
+            <div class="row">
               <div class="col s12 m12 l12">
-                  <center><h4 class="white-text">Sponsors</h4></center>
+                <center><h3 class="white-text">Sponsors</h3></center>
+              </div>
+                <div class="row">
+                    <div class="col l4"></div>
+                    <div class="col l4"><center><h4 class="white-text">Gold Sponsor</h4></center><center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/cgt.jpg'%}"></a></center></div>
+                    <div class="col l4"></div>
                 </div>
+                <div class="row">
+                    <center><h4 class="white-text">Patron Sponsors</h4></center>
+              <div class="col l4"><center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/union.jpg'%}"></a></center></div>
+                    
+                <div class="col l4"><center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/cghb.jpg'%}"></a></center></div>
+                    
+                   
+              <div class="col l4"><center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/bsnl.jpg'%}"></a></center></div>
+                </div>
+                
+                <div class="row">
+              <div class="col l4"><center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/kbs.jpg'%}"></a></center></div>
+                    
+                <div class="col l4"><center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/satyama.jpg'%}"></a></center></div>
+                
+              <div class="col l4"><center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/cps.jpg'%}"></a></center></div>
+                </div>
+                
+                <div class="row">
                 <div class="col l4"></div>
-                <div class="col s12 m12 l4">
-                  <center><h4 class="white-text">IDE Sponsor</h4></center>
-                  <center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/jetbrains.png'%}"></a></center>
+              <div class="col l4"><center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/methodex.png'%}"></a></center></div>
+                
+                <div class="col l4"></div>
                 </div>
+                <div class="row">
+                <center><h4 class="white-text">Hackathon Partners</h4></center>
                 <div class="col l4">
-                    <center><h4 class="white-text">Design Partner</h4></center>
-                    <a href="https://www.sketchapp.com">
-                        <svg viewBox="0 0 485 182" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
-                          <g transform="translate(47.000000, 48.000000)" fill="none" fill-rule="evenodd">
-                            <path d="M128.188992,56.8617138 L128.11634,55.89 L127.141914,55.89 L121.093914,55.89 L120,55.89 L120.044795,56.9829967 C120.543867,69.160365 128.753532,77.226 143.353914,77.226 C157.279143,77.226 166.747914,69.9911483 166.747914,59.04 C166.747914,53.1184522 164.693534,48.927976 160.778833,46.0661622 C157.767516,43.8647614 154.166963,42.6239073 148.19641,41.3293443 C147.797486,41.2428476 147.381679,41.1543122 146.883403,41.0494613 C146.587521,40.9871995 145.525896,40.7649683 145.582237,40.77678 C134.739308,38.5036128 131.299914,36.5289237 131.299914,30.648 C131.299914,24.5666916 136.273043,20.694 144.613914,20.694 C152.728938,20.694 157.857573,25.6502434 158.096406,33.4521278 L158.127565,34.47 L159.145914,34.47 L165.109914,34.47 L166.184425,34.47 L166.159635,33.3957757 C165.87899,21.2345154 157.719276,13.05 144.529914,13.05 C131.603206,13.05 123.067914,20.8283391 123.067914,30.9 C123.067914,36.8048062 125.120118,40.9168746 129.040993,43.6642805 C132.027939,45.7572714 135.488151,46.8668408 141.592112,48.0992319 C141.87798,48.1569488 142.176238,48.2165293 142.531319,48.2869684 C142.751113,48.3305699 142.99935,48.379656 143.465218,48.471754 C149.240597,49.6144477 151.788878,50.3197385 154.113641,51.6715769 C156.999603,53.3497493 158.431914,55.7468655 158.431914,59.46 C158.431914,65.9068018 153.01151,69.582 143.521914,69.582 C134.437247,69.582 128.799402,65.0259561 128.188992,56.8617138 Z M183.757914,12 L183.757914,10.95 L182.707914,10.95 L176.743914,10.95 L175.693914,10.95 L175.693914,12 L175.693914,75 L175.693914,76.05 L176.743914,76.05 L182.707914,76.05 L183.757914,76.05 L183.757914,75 L183.757914,63.7670749 L192.246333,55.5000934 L207.405119,75.6316029 L207.720167,76.05 L208.243914,76.05 L215.635914,76.05 L217.751388,76.05 L216.472208,74.3650882 L197.959461,49.9804575 L215.032611,32.9882236 L216.835378,31.194 L214.291914,31.194 L206.311914,31.194 L205.874807,31.194 L205.566824,31.5041754 L183.757914,53.4683087 L183.757914,12 Z M259.105914,56.394 L260.092338,56.394 L260.153869,55.4094972 C260.164692,55.2363423 260.180741,54.9501209 260.19678,54.6052845 C260.209476,54.3323225 260.219947,54.0663344 260.227431,53.8148552 C260.235542,53.5423343 260.239914,53.2944351 260.239914,53.076 C260.239914,39.8967033 251.510612,30.186 238.609914,30.186 C225.733454,30.186 216.559914,40.5227549 216.559914,53.58 C216.559914,67.0161336 225.317654,77.058 238.693914,77.058 C248.808096,77.058 256.621781,71.0568937 259.437034,61.9542432 L259.857728,60.594 L258.433914,60.594 L252.217914,60.594 L251.476351,60.594 L251.228365,61.2928697 C249.460493,66.2750553 244.674125,69.582 238.777914,69.582 C231.069511,69.582 225.695993,64.2882888 224.727978,56.394 L259.105914,56.394 Z M224.972323,49.422 C226.333447,42.3536376 231.531935,37.662 238.609914,37.662 C245.90509,37.662 250.939644,42.199681 252.040866,49.422 L224.972323,49.422 Z M286.699914,38.334 L287.749914,38.334 L287.749914,37.284 L287.749914,32.244 L287.749914,31.194 L286.699914,31.194 L277.921914,31.194 L277.921914,20.064 L277.921914,19.014 L276.871914,19.014 L270.907914,19.014 L269.857914,19.014 L269.857914,20.064 L269.857914,31.194 L262.759914,31.194 L261.709914,31.194 L261.709914,32.244 L261.709914,37.284 L261.709914,38.334 L262.759914,38.334 L269.857914,38.334 L269.857914,63.492 C269.857914,71.7449923 274.138534,76.218 281.995914,76.218 C283.367352,76.218 284.549613,76.1358985 285.542361,75.9980169 C286.155788,75.9128186 286.579398,75.8245666 286.81294,75.7596938 L287.581914,75.5460899 L287.581914,74.748 L287.581914,69.372 L287.581914,68.0692146 L286.308863,68.3459648 C286.257979,68.3570265 286.1549,68.3780018 286.007661,68.4056092 C285.758175,68.4523879 285.48028,68.4993296 285.182145,68.5431729 C284.418645,68.6554524 283.661373,68.7274153 282.964187,68.7400455 C282.892473,68.7413447 282.8217,68.742 282.751914,68.742 C279.309872,68.742 277.921914,67.1252576 277.921914,63.072 L277.921914,38.334 L286.699914,38.334 Z M311.773914,77.058 C322.935724,77.058 330.816731,69.9948331 332.795914,59.9999604 L333.044223,58.746 L331.765914,58.746 L325.717914,58.746 L324.910564,58.746 L324.703155,59.5262538 C323.007659,65.9045484 318.405708,69.582 311.773914,69.582 C303.497642,69.582 297.787914,63.0533472 297.787914,53.664 C297.787914,44.2020218 303.487725,37.662 311.773914,37.662 C318.405708,37.662 323.007659,41.3394516 324.703155,47.7177462 L324.910564,48.498 L325.717914,48.498 L331.765914,48.498 L333.044223,48.498 L332.795914,47.2440396 C330.816731,37.2491669 322.935724,30.186 311.773914,30.186 C298.807945,30.186 289.639914,40.5958108 289.639914,53.664 C289.639914,66.660313 298.820569,77.058 311.773914,77.058 Z M347.893914,12 L347.893914,10.95 L346.843914,10.95 L340.879914,10.95 L339.829914,10.95 L339.829914,12 L339.829914,75 L339.829914,76.05 L340.879914,76.05 L346.843914,76.05 L347.893914,76.05 L347.893914,75 L347.893914,49.716 C347.893914,42.0124523 352.582874,37.494 359.695914,37.494 C366.489563,37.494 369.901914,41.4268794 369.901914,48.876 L369.901914,75 L369.901914,76.05 L370.951914,76.05 L376.915914,76.05 L377.965914,76.05 L377.965914,75 L377.965914,47.7 C377.965914,37.1776416 371.450406,30.186 360.703914,30.186 C355.175195,30.186 350.731176,32.2115513 347.893914,35.1187318 L347.893914,12 Z" fill="#000000"/>
-                            <path d="M20.9032258,2.83147321 L47.9032258,0 L74.9032258,2.83147321 L95.8064516,30.6662946 L47.9032258,86 L0,30.6662946 L20.9032258,2.83147321 Z" fill="#FDB300"/>
-                            <g transform="translate(0.000000, 30.666295)">
-                              <polygon fill="#EA6C00" points="19.403 0 47.903 55.334 0 0"/>
-                              <polygon fill="#EA6C00" transform="translate(71.854839, 27.666853) scale(-1, 1) translate(-71.854839, -27.666853)" points="67.306 0 95.806 55.334 47.903 0"/>
-                              <polygon fill="#FDAD00" points="19.403 0 76.403 0 47.903 55.334"/>
-                            </g>
-                            <polygon fill="#FDD231" points="47.903 0 20.903 2.831 19.403 30.666"/>
-                            <polygon fill="#FDD231" transform="translate(62.153226, 15.333147) scale(-1, 1) translate(-62.153226, -15.333147)" points="76.403 0 49.403 2.831 47.903 30.666"/>
-                            <polygon fill="#FDAD00" transform="translate(85.354839, 16.748884) scale(-1, 1) translate(-85.354839, -16.748884)" points="74.903 30.666 95.806 2.831 94.306 30.666"/>
-                            <polygon fill="#FDAD00" points="0 30.666 20.903 2.831 19.403 30.666"/>
-                            <polygon fill="#FEEEB7" points="47.903 0 19.403 30.666 76.403 30.666"/>
-                          </g>
-                        </svg>
-                    </a>
+                <center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'Sponsors/github.png'%}"></a></center>
+              </div>
+                <div class="col l4">
+                <center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'Sponsors/HE_logo.png'%}"></a></center>
+              </div>
+              <div class="col l4">
+                <center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'Sponsors/ibm.jpg'%}"></a></center>
+              </div>
                 </div>
-              <div class="col s12 m12 l12">
-                  <center><h4 class="white-text">Previous Sponsors</h4></center>
+                
+                <div class="row">
+                    <center><h4 class="white-text">IDE Partner</h4>
+                <div class="col l4"></div>
+              <div class="col l4"><center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/jetbrains.png'%}"></a></center></div>
+                
+                <div class="col l4"></div>
+                </div>
+                
+                <div class="row">
+              <div class="col l4">
+                  <center><h4 class="white-text">Design Partner</h4></center>
+                  <a href="https://www.sketchapp.com">
+                      <svg viewBox="0 0 485 182" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+                        <g transform="translate(47.000000, 48.000000)" fill="none" fill-rule="evenodd">
+                          <path d="M128.188992,56.8617138 L128.11634,55.89 L127.141914,55.89 L121.093914,55.89 L120,55.89 L120.044795,56.9829967 C120.543867,69.160365 128.753532,77.226 143.353914,77.226 C157.279143,77.226 166.747914,69.9911483 166.747914,59.04 C166.747914,53.1184522 164.693534,48.927976 160.778833,46.0661622 C157.767516,43.8647614 154.166963,42.6239073 148.19641,41.3293443 C147.797486,41.2428476 147.381679,41.1543122 146.883403,41.0494613 C146.587521,40.9871995 145.525896,40.7649683 145.582237,40.77678 C134.739308,38.5036128 131.299914,36.5289237 131.299914,30.648 C131.299914,24.5666916 136.273043,20.694 144.613914,20.694 C152.728938,20.694 157.857573,25.6502434 158.096406,33.4521278 L158.127565,34.47 L159.145914,34.47 L165.109914,34.47 L166.184425,34.47 L166.159635,33.3957757 C165.87899,21.2345154 157.719276,13.05 144.529914,13.05 C131.603206,13.05 123.067914,20.8283391 123.067914,30.9 C123.067914,36.8048062 125.120118,40.9168746 129.040993,43.6642805 C132.027939,45.7572714 135.488151,46.8668408 141.592112,48.0992319 C141.87798,48.1569488 142.176238,48.2165293 142.531319,48.2869684 C142.751113,48.3305699 142.99935,48.379656 143.465218,48.471754 C149.240597,49.6144477 151.788878,50.3197385 154.113641,51.6715769 C156.999603,53.3497493 158.431914,55.7468655 158.431914,59.46 C158.431914,65.9068018 153.01151,69.582 143.521914,69.582 C134.437247,69.582 128.799402,65.0259561 128.188992,56.8617138 Z M183.757914,12 L183.757914,10.95 L182.707914,10.95 L176.743914,10.95 L175.693914,10.95 L175.693914,12 L175.693914,75 L175.693914,76.05 L176.743914,76.05 L182.707914,76.05 L183.757914,76.05 L183.757914,75 L183.757914,63.7670749 L192.246333,55.5000934 L207.405119,75.6316029 L207.720167,76.05 L208.243914,76.05 L215.635914,76.05 L217.751388,76.05 L216.472208,74.3650882 L197.959461,49.9804575 L215.032611,32.9882236 L216.835378,31.194 L214.291914,31.194 L206.311914,31.194 L205.874807,31.194 L205.566824,31.5041754 L183.757914,53.4683087 L183.757914,12 Z M259.105914,56.394 L260.092338,56.394 L260.153869,55.4094972 C260.164692,55.2363423 260.180741,54.9501209 260.19678,54.6052845 C260.209476,54.3323225 260.219947,54.0663344 260.227431,53.8148552 C260.235542,53.5423343 260.239914,53.2944351 260.239914,53.076 C260.239914,39.8967033 251.510612,30.186 238.609914,30.186 C225.733454,30.186 216.559914,40.5227549 216.559914,53.58 C216.559914,67.0161336 225.317654,77.058 238.693914,77.058 C248.808096,77.058 256.621781,71.0568937 259.437034,61.9542432 L259.857728,60.594 L258.433914,60.594 L252.217914,60.594 L251.476351,60.594 L251.228365,61.2928697 C249.460493,66.2750553 244.674125,69.582 238.777914,69.582 C231.069511,69.582 225.695993,64.2882888 224.727978,56.394 L259.105914,56.394 Z M224.972323,49.422 C226.333447,42.3536376 231.531935,37.662 238.609914,37.662 C245.90509,37.662 250.939644,42.199681 252.040866,49.422 L224.972323,49.422 Z M286.699914,38.334 L287.749914,38.334 L287.749914,37.284 L287.749914,32.244 L287.749914,31.194 L286.699914,31.194 L277.921914,31.194 L277.921914,20.064 L277.921914,19.014 L276.871914,19.014 L270.907914,19.014 L269.857914,19.014 L269.857914,20.064 L269.857914,31.194 L262.759914,31.194 L261.709914,31.194 L261.709914,32.244 L261.709914,37.284 L261.709914,38.334 L262.759914,38.334 L269.857914,38.334 L269.857914,63.492 C269.857914,71.7449923 274.138534,76.218 281.995914,76.218 C283.367352,76.218 284.549613,76.1358985 285.542361,75.9980169 C286.155788,75.9128186 286.579398,75.8245666 286.81294,75.7596938 L287.581914,75.5460899 L287.581914,74.748 L287.581914,69.372 L287.581914,68.0692146 L286.308863,68.3459648 C286.257979,68.3570265 286.1549,68.3780018 286.007661,68.4056092 C285.758175,68.4523879 285.48028,68.4993296 285.182145,68.5431729 C284.418645,68.6554524 283.661373,68.7274153 282.964187,68.7400455 C282.892473,68.7413447 282.8217,68.742 282.751914,68.742 C279.309872,68.742 277.921914,67.1252576 277.921914,63.072 L277.921914,38.334 L286.699914,38.334 Z M311.773914,77.058 C322.935724,77.058 330.816731,69.9948331 332.795914,59.9999604 L333.044223,58.746 L331.765914,58.746 L325.717914,58.746 L324.910564,58.746 L324.703155,59.5262538 C323.007659,65.9045484 318.405708,69.582 311.773914,69.582 C303.497642,69.582 297.787914,63.0533472 297.787914,53.664 C297.787914,44.2020218 303.487725,37.662 311.773914,37.662 C318.405708,37.662 323.007659,41.3394516 324.703155,47.7177462 L324.910564,48.498 L325.717914,48.498 L331.765914,48.498 L333.044223,48.498 L332.795914,47.2440396 C330.816731,37.2491669 322.935724,30.186 311.773914,30.186 C298.807945,30.186 289.639914,40.5958108 289.639914,53.664 C289.639914,66.660313 298.820569,77.058 311.773914,77.058 Z M347.893914,12 L347.893914,10.95 L346.843914,10.95 L340.879914,10.95 L339.829914,10.95 L339.829914,12 L339.829914,75 L339.829914,76.05 L340.879914,76.05 L346.843914,76.05 L347.893914,76.05 L347.893914,75 L347.893914,49.716 C347.893914,42.0124523 352.582874,37.494 359.695914,37.494 C366.489563,37.494 369.901914,41.4268794 369.901914,48.876 L369.901914,75 L369.901914,76.05 L370.951914,76.05 L376.915914,76.05 L377.965914,76.05 L377.965914,75 L377.965914,47.7 C377.965914,37.1776416 371.450406,30.186 360.703914,30.186 C355.175195,30.186 350.731176,32.2115513 347.893914,35.1187318 L347.893914,12 Z" fill="#000000"/>
+                          <path d="M20.9032258,2.83147321 L47.9032258,0 L74.9032258,2.83147321 L95.8064516,30.6662946 L47.9032258,86 L0,30.6662946 L20.9032258,2.83147321 Z" fill="#FDB300"/>
+                          <g transform="translate(0.000000, 30.666295)">
+                            <polygon fill="#EA6C00" points="19.403 0 47.903 55.334 0 0"/>
+                            <polygon fill="#EA6C00" transform="translate(71.854839, 27.666853) scale(-1, 1) translate(-71.854839, -27.666853)" points="67.306 0 95.806 55.334 47.903 0"/>
+                            <polygon fill="#FDAD00" points="19.403 0 76.403 0 47.903 55.334"/>
+                          </g>
+                          <polygon fill="#FDD231" points="47.903 0 20.903 2.831 19.403 30.666"/>
+                          <polygon fill="#FDD231" transform="translate(62.153226, 15.333147) scale(-1, 1) translate(-62.153226, -15.333147)" points="76.403 0 49.403 2.831 47.903 30.666"/>
+                          <polygon fill="#FDAD00" transform="translate(85.354839, 16.748884) scale(-1, 1) translate(-85.354839, -16.748884)" points="74.903 30.666 95.806 2.831 94.306 30.666"/>
+                          <polygon fill="#FDAD00" points="0 30.666 20.903 2.831 19.403 30.666"/>
+                          <polygon fill="#FEEEB7" points="47.903 0 19.403 30.666 76.403 30.666"/>
+                        </g>
+                      </svg>
+                  </a>
               </div>
-              <div class="col s12 m12 l12 center">
-                  <center><h4 class="white-text">Title Sponsor</h4></center>
-                  <a href="http://www.chips.gov.in/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/chips.jpg'%}"></a>
+                    <div class="col l4">
+                <center><h4 class="white-text">Platform Partner</h4></center>
+                <center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'Sponsors/codechef.png'%}"></a></center>
               </div>
-              <div class="col s12 m12 l4">
-                  <center><h5 class="white-text">Gold Sponsor</h5></center>
-                  <center><a href="http://www.nayaraipur.gov.in/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/nrda.jpg'%}"></a></center>
+                    <div class="col l4">
+                <center><h4 class="white-text">Bug Partner</h4></center>
+                <center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'Sponsors/bugsee.jpg'%}"></a></center>
               </div>
-              <div class="col s12 m12 l4">
-                  <br><br><br><br>
-                  <center><h5 class="white-text">Platform Sponsor</h5></center>
-                  <center><a href="https://www.hackerearth.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/HE_logo.png'%}"></a></center>
-              </div>
-              <!--<div class="col s12 m12 l4">
-                  <center><h5 class="white-text">Patron</h5></center>
-                  <center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/jetbrains.png'%}"></a></center>
-              </div>-->
-              <div class="col s12 m12 l4 center">
-                  <center><h5 class="white-text">Radio Partner</h5></center>
-                  <a href="#" target="_blank"><img class="responsive-img" src="{% static 'sponsors/fm.jpg' %}"></a>
-                  <br><br>
-                  <br><br>
-              </div>
-          </div>
-      </div>
+                </div>
+                <div class="col s12 m12 l12">
+                    <center><h4 class="white-text">Previous Sponsors</h4></center>
+                </div>
+                <div class="col s12 m12 l12 center">
+                    <center><h4 class="white-text">Title Sponsor</h4></center>
+                    <a href="http://www.chips.gov.in/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/chips.jpg'%}"></a>
+                </div>
+                <div class="col s12 m12 l4">
+                    <center><h5 class="white-text">Gold Sponsor</h5></center>
+                    <center><a href="http://www.nayaraipur.gov.in/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/nrda.jpg'%}"></a></center>
+                </div>
+                <div class="col s12 m12 l4">
+                    <br><br><br><br>
+                    <center><h5 class="white-text">Platform Sponsor</h5></center>
+                    <center><a href="https://www.hackerearth.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/HE_logo.png'%}"></a></center>
+                </div>
+                <!--<div class="col s12 m12 l4">
+                    <center><h5 class="white-text">Patron</h5></center>
+                    <center><a href="https://www.jetbrains.com/" target="_blank"><img class="responsive-img" src="{% static 'sponsors/jetbrains.png'%}"></a></center>
+                </div>-->
+                <div class="col s12 m12 l4 center">
+                    <center><h5 class="white-text">Radio Partner</h5></center>
+                    <a href="#" target="_blank"><img class="responsive-img" src="{% static 'sponsors/fm.jpg' %}"></a>
+                    <br><br>
+                    <br><br>
+                </div>
+            </div>
+        </div>
      </div>
 
 <!-- About Tecnhovate -->
