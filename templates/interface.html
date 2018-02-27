@@ -1,0 +1,223 @@
+{% load material_form %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="REM6F9SN-sn5UX5AibUXsUGj8GZ3E1myPaRbneFFn6k" />
+   {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="description" content="TechNovate is central India's largest techno-cultural fest organized by students of IIIT-Naya Raipur. It is national level encompassment of Technical and Cultural events. Last year it was attended by more than 500 students from different colleges in India. This time we are back with more challenges and ideas that will change world. With wide number of events encompassing various recent domains of engineering is great platform to demonstrate your talent."/>
+    <meta name="keywords" content="technovate, tecnical Festival, IIIT-NR ,tech fest"/>
+    <meta name="email" content="technovate@iiitnr.ac.in">
+    <meta name="author" content="Web Development Team IIIT-NR">
+    <link rel="icon" href="{% static "T18.png"%}">
+    <!--<link rel="icon" href="{% static "tv_icon.png"%}">-->
+
+    <!--open grap meta data-->
+    <meta property="og:image" content="{% static 'preview_op_technovate2018.png'%}"/>
+    <meta property="og:title" content="Technovate 2k18 IIIT-NR"/>
+    <meta property="og:url" content="http://technovat-iiitnr.org"/>
+    <meta property="og:description" content="TechNovate is cenrtral India's largest techno-cultural fest organized by students of IIIT-Naya Raipur. "/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:author" content="Web Development Team IIIT-NR"/>
+    <title>Technovate 2018 | Central India's Largest Techno-Cultural Festival</title>
+    <style>
+      #celeb{
+      display: none;
+   }
+    #loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 200px;
+      height: 200px;
+
+      margin-top: -100px;
+      margin-left: -100px;
+    }
+    </style>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/temp.css"%}">
+ <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+ --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+ <script src = "{% static 'main.js'%}"></script>
+     <script>
+
+      $(window).on('load',function () {
+        //$('#loader').fadeOut("slow");
+        $('#myT').fadeIn(5000);
+      });
+    </script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+   <style>
+   #navbar-logo-official{
+    margin-left: 10px;
+    width: auto;
+    height: 65px;
+   }
+   </style>
+    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    {% if request.user.is_authenticated %}
+    {% else %}
+     <script src="{% static 'technovate.js'%}"></script>
+     {% endif%}
+     <style type="text/css">
+       #iiitnr{
+        height: auto;
+        width: 320px;
+       }
+       #top{
+         z-index: 999px;
+
+       }
+     </style>
+</head>
+
+<body>
+  <script>
+  function copyTo(element) {
+    var $temp = $("<input>");
+   $("body").append($temp);
+   $temp.val($(element).text()).select();
+   document.execCommand("copy");
+   $temp.remove();
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1819830324960691',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+</script>
+
+<div class="navbar">
+  <nav class="transparent">
+    <div class="nav-wrapper">
+      <a class="brand-logo hide-on-med-and-down left indexlink" href="#"><img class="brand-logo" id ="navbar-logo-official" src="{% static 'logo_mini.png' %}"></a>
+    <!--  <a class="barnd-logo" id="indexlink" href="#">" CREATE INNOVATE TECHNOVATE"</a>-->
+      <a href="#" id="btnc" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="homelink" href="{% url 'index' %}">HOME</a></li>
+          <li><a class="techeventslink" href="{% url 'events' %}">EVENTS</a></li>
+          <li><a class="gameZone">GAMEZONE</a></li>
+          <li><a class="workshoplink" href="#">WORKSHOP</a>
+          <li><a class="teamlink" href="#">OUR TEAM</a></li>
+          <li><a class="sponsorslink" href="#">SPONSORS</a></li>
+          <li><a class="accomodation" href="#">HOSPITALITY</a></li>
+          <li><a class="celeb"  href="#">CELEB NIGHT</a></li>
+          <li><a class="aboutlink" href="#">ABOUT US</a></li>
+          {% if request.user.is_authenticated %}
+            <li><a class="dashboardlink" href="{% url 'interface' %}">DASHBOARD</a></li>
+            <li><a href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i></a></li>
+            {% else %}
+           <li><a class="modal-trigger" href="{% url 'sign_up' %}">REGISTER</a></li>
+            <li><a class="modal-trigger" href="{% url 'sign_in' %}">LOGIN</a></li>
+          <li><a class="modal-trigger" href="#modal2">CAMPUS AMBASSADOR</a></li>
+          {% endif %}
+        </ul>
+        </div>
+    </nav>
+    <ul id="slide-out" class="side-nav">
+        <li class="logo"><a href="#" class="indexlink brand-logo">
+          <img src="{% static 'TECHNOVATE_beta.png'%}">
+        </a></li><br><br><li><div class="divider"></div></li>
+        <li><a href="#" class="homelink"><i class="material-icons">home</i>HOME</a></li>
+        <li><a class="techeventslink"><i class="material-icons">event</i>EVENTS</a></li>
+        <li><a class="gameZone"><i class="material-icons">videogame_asset</i>GAMEZONE</a></li>
+        <!--<li><a class="workshoplink" href="#"><i class="fa fa-cogs" aria-hidden="true"></i>WORKSHOP</a></li>-->
+        <li><a href="#" class="sponsorslink"><i class="material-icons">monetization_on</i>SPONSORS</a></li>
+        <li><a href="#" class="teamlink"><i class="material-icons">supervisor_account</i>
+OUR TEAM</a></li>
+        <li>
+          {% if request.user.is_authenticated %}
+          <li><a href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i>LOGOUT</a></li>
+          {% else %}
+          <a class="modal-trigger" id="joinID" href="{% url 'join'%}"><i class="material-icons">account_circle</i>REGISTER/LOGIN</a></li>
+          <li><a class="modal-trigger" href="#modal2"><i class="fa fa-user-o"></i>CAMPUS AMBASSADOR</a></li>
+          {% endif %}
+          <li><a href="#" class="accomodation"><i class="material-icons">local_hotel</i>Hospitality</a></li>
+          <li><a  target="_blank" href="https://www.google.com/maps/dir/Current+Location/IIIT-NR"><i class="material-icons">directions</i>REACH US</a></li>
+          <li><a  href="#" class="aboutlink"><i class="material-icons">info_outline</i>ABOUT US</a></li>
+          <li><a href="#" class="privacy-policy"><i class="material-icons">import_contacts</i>PRIVACY</a></li>
+        </ul>
+  </div>
+ 
+<div id="myT">
+      <div id="title">
+       <div class="container">
+          <div class="row">
+              <h2>Register all the team members - {{request.user.username}}</h2>
+            <div class="col s6">
+                <h4>Add member</h4>
+                <form method="post">
+                 {% csrf_token %}
+                 	{% form form=form %}{% endform %}
+
+                    <button class="btn waves-effect waves-light teal darken-2" type="submit" name="action">
+                        Add
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+              <div class="col s6">
+                <h4>Members List</h4><br>
+                {% if members %}
+                {% for m in members %}
+                    <h6>Name: {{m.name}}</h6>
+                    <h6>Email: {{m.email}}</h6>
+                    <h6>Mobile: {{m.mobile}}</h6>
+                    <h6>Event: {{m.event}}</h6>
+                    <h6>Accomodation: {{m.accomodation}}</h6>
+                    <h6>Subtotal: {{m.total}}</h6>
+                  <hr>
+                {% endfor %}
+                {% else %}
+                    <p>No members listed.</p>
+                {% endif %}
+                <h5>Grand total: {{profile.gtotal}}</h5>
+                <h5>Status: {%if profile.status%}Paid{%else%}Unpaid{%endif%}</h5>
+            </div>
+           </div>
+       </div>
+      </div>
+    
+     
+    </div>
+    <script>
+$(function () {
+    // alert(h_month);
+    $("#id_accomodation").focusout(function () {
+        var total;
+        if ($("#id_accomodation").is(":checked")) {
+            total=500;
+            $("#id_total").val(total);
+        } else {
+            total = 250;
+            $("#id_total").val(total);
+        }
+    })
+});
+</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js'></script>
+</body>
+</html>

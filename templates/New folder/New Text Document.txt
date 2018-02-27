@@ -1,0 +1,5 @@
+ 
+           window.onload = function() {
+              $('#landing').css('display',"none");
+              $('#myT').fadeIn(5000);
+            };

@@ -1,0 +1,19 @@
+{% extends "base1.html" %}
+{% load material_form %}
+
+{% block page_title %}Log in{% endblock %}
+
+{% block caption %}Log in{% endblock %}
+
+{% block content %}
+
+<form action="" method="post">
+	{% csrf_token %}
+	{% form form=form %}{% endform %}
+	<button class="btn waves-effect waves-light teal darken-2" type="submit" name="action">
+    	Login
+	    <i class="material-icons right">send</i>
+  	</button>
+</form>
+
+{% endblock %}
