@@ -184,9 +184,7 @@ OUR TEAM</a></li>
                 {% if members %}
                 {% for m in members %}
                     <h6>Name: {{m.name}}</h6>
-                    <h6>Email: {{m.email}}</h6>
-                    <h6>Mobile: {{m.mobile}}</h6>
-                    <h6>Event: {{m.event}}</h6>
+                    <h6>Events: {{m.event}}</h6>
                     <h6>Accomodation: {{m.accomodation}}</h6>
                     <h6>Subtotal: {{m.total}}</h6>
                   <hr>
@@ -196,7 +194,15 @@ OUR TEAM</a></li>
                 {% endif %}
                 <h5>Grand total: {{profile.gtotal}}</h5>
                 <h5>Status: {%if profile.status%}Paid{%else%}Unpaid{%endif%}</h5>
+                  {% if not profile.status %}
+                  <h6>Our team will contact you soon.</h6>
+                  {% endif %}
             </div>
+           </div>
+           <div class="row">
+           <h4>Payment Details: </h4>
+               <p>1. Pay 250/- per person and attend all events, workshops, session and celeb night.</p>
+               <p>2. Pay 500/- per person and attend all events, workshop, sessions and celeb night with 2 days accomodation.</p>
            </div>
        </div>
       </div>

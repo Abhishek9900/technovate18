@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile, Member
+from .models import Profile, Member, choice2
 
 
 class ProfileForm(forms.ModelForm):
@@ -15,6 +15,7 @@ class ProfileForm(forms.ModelForm):
 
 
 class MemberForm(forms.ModelForm):
+    event = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=choice2)
     
     def __init__(self, *args, **kwargs):
         assigned_users = kwargs.pop('assigned_to', [])

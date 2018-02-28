@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'paytm',
     'phonenumber_field',
     'accounts',
-    'multiselectfield',
 ]
 
 MIDDLEWARE = [

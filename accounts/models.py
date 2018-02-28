@@ -4,7 +4,6 @@ import datetime
 import os
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
-from multiselectfield import MultiSelectField
 choice2 = (
     ('Appiness', 'Appiness'),
     ('Backyard Data Science', 'Backyard Data Science'),
@@ -39,7 +38,7 @@ class Member(models.Model):
     email = models.EmailField(max_length=200)
     mobile = PhoneNumberField()
     institute = models.CharField(max_length=500)
-    event = MultiSelectField(choices=choice2)
+    event = models.CharField(max_length=1000)
     accomodation = models.BooleanField(default=False)
     total = models.IntegerField(default=250)
     
