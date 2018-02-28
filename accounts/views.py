@@ -96,5 +96,5 @@ def interface(request):
                 return HttpResponseRedirect(reverse('interface'))
             except Exception as e:
                 messages.error(request, 'Error creating member: {}'.format(e))
-                return HttpResponseRedirect(reverse('ineterface'))
+                return HttpResponseRedirect(reverse('interface'))
     return render(request, 'interface.html',{'form':form, 'members':members, 'profile':profile})
