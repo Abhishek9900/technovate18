@@ -120,7 +120,6 @@
 #social_links  li::before{
     content: '';
     position: absolute;
-    background-image: url(img/cloud6.png);
     background-size: 100%;
     left: -10px;
     background-position: 0px 28px;
@@ -611,11 +610,11 @@
     </nav>
     <ul id="mobile-demo" class="side-nav">
         <li class="logo"><a href="#" class="indexlink brand-logo">
-          <img src="{% static 'index_back_Y.jpg'%}">
+          <img src="{% static 'close.png'%}">
         </a></li><br><br><li><div class="divider"></div></li>
         <li><a href="{% url 'index' %}" class="homelink"><i class="material-icons">home</i>HOME</a></li>
         <li><a href="{%url 'events'%}"><i class="material-icons">event</i>EVENTS</a></li>
-        <li><a href="#" class="sponsorslink"><i class="material-icons">monetization_on</i>PREVIOUS SPONSORS</a></li>
+        <li><a href="#" class="sponsorslink"><i class="material-icons">monetization_on</i>SPONSORS</a></li>
         <li><a href="#" class="teamlink"><i class="material-icons">supervisor_account</i>OUR TEAM</a></li>
         <li>
           {% if request.user.is_authenticated %}
