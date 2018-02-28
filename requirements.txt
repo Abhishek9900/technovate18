@@ -2,3 +2,4 @@ django==1.11
 django-material
 django-phonenumber-field
 django-multiselectfield
+django-import-export
