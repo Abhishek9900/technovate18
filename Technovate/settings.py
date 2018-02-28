@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'paytm',
     'phonenumber_field',
     'accounts',
+    'import_export',
 ]
 
 MIDDLEWARE = [
