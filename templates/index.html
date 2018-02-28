@@ -49,7 +49,8 @@
     <script>
 
       $(window).on('load',function () {
-        $('#loader').fadeOut("slow");
+        $('#loader').hide();
+        $('#title').show();
         $('#myT').fadeIn(5000);
       });
     </script>
@@ -1001,7 +1002,7 @@ or other benefits.</p>
 
     </p>
        </center><br>
-        <center><a href="{% url 'sign_up' %}"><p class="event-details white-text btn">Registeration started!</p></a></center>
+        <center><a href="{% url 'sign_up' %}"><p class="event-details white-text btn">Registration started!</p></a></center>
     </div>
   </div>
   </div>

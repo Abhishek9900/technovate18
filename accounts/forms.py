@@ -22,6 +22,7 @@ class MemberForm(forms.ModelForm):
         super(MemberForm, self).__init__(*args, **kwargs)
         self.fields['total'].widget.attrs['readonly'] = True
         self.fields['event'].widget.attrs['multiple'] = True
+        self.fields['accomodation'].label = "Click here to get accomodation"
    
     class Meta:
         model = Member
