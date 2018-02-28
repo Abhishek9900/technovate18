@@ -15,12 +15,13 @@ class ProfileForm(forms.ModelForm):
 
 
 class MemberForm(forms.ModelForm):
-    event = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=choice2)
+    event = forms.MultipleChoiceField(choices=choice2)
     
     def __init__(self, *args, **kwargs):
         assigned_users = kwargs.pop('assigned_to', [])
         super(MemberForm, self).__init__(*args, **kwargs)
         self.fields['total'].widget.attrs['readonly'] = True
+        self.fields['event'].widget.attrs['multiple'] = True
    
     class Meta:
         model = Member
