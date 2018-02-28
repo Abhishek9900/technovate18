@@ -43,4 +43,4 @@ class Member(models.Model):
     total = models.IntegerField(default=250)
     
     def __str__(self):
-        return self.name + ' - ' + self.mobile + ' - ' + self.institute
+        return self.name + ' - ' + str(self.mobile) + ' - ' + self.institute
