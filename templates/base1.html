@@ -614,8 +614,12 @@
         </a></li><br><br><li><div class="divider"></div></li>
         <li><a href="{% url 'index' %}" class="homelink"><i class="material-icons">home</i>HOME</a></li>
         <li><a href="{%url 'events'%}"><i class="material-icons">event</i>EVENTS</a></li>
+        <li><a class="gameZone"><i class="material-icons">games</i>GAMEZONE</a></li>
+          <li><a class="workshoplink" href="#"><i class="material-icons">announcement</i>WORKSHOP</a></li>
+          <li><a class="teamlink" href="#"><i class="material-icons">people</i>OUR TEAM</a></li>
         <li><a href="#" class="sponsorslink"><i class="material-icons">monetization_on</i>SPONSORS</a></li>
-        <li><a href="#" class="teamlink"><i class="material-icons">supervisor_account</i>OUR TEAM</a></li>
+        <li><a class="accomodation" href="#"><i class="material-icons">local_hotel</i>HOSPITALITY</a></li>
+          <li><a class="celeb"  href="#"><i class="material-icons">accessibility</i>CELEB NIGHT</a></li>
         <li>
           {% if request.user.is_authenticated %}
              <li><a class="dashboardlink" href="{% url 'interface' %}"><i class="material-icons">dashboard</i>DASHBOARD</a></li>
@@ -776,7 +780,7 @@
                         
                         <img class="responsive-img circle" src="{% static 'Team/pragya.jpg'%}">
                         <h5 class="white-text">Pragya Vedita</h5>
-                        <h6 class="white-text">Finance</h6>
+                        <h6 class="white-text">Sponsorship</h6>
                         <p class="white-text">Contact: 7869257247</p>
                         <a class="white-text" href="mailto:pragya15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                     </div>
@@ -787,6 +791,18 @@
             </div>
             </div>
             <div class="row">
+             <div class="col s12 m12 l4">
+                <div class="row">
+                    <div class="col s112 m12 l12 center">
+                        
+                        <img class="responsive-img circle" src="{% static 'Team/ananya.jpg'%}">
+                        <h5 class="white-text">Ananya Shrivastav</h5>
+                        <h6 class="white-text">Sponsorship</h6>
+                        <p class="white-text">Contact: 7587364524</p>
+                        <a class="white-text" href="mailto:ananya15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
+                    </div>
+                </div>
+            </div>
             <div class="col s12 m12 l4">
                 <div class="row">
                     <div class="col s112 m12 l12 center">
@@ -796,18 +812,6 @@
                         <h6 class="white-text">Finance</h6>
                         <p class="white-text">Contact: 7587093406</p>
                         <a class="white-text" href="mailto:pooja15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m12 l4">
-                <div class="row">
-                    <div class="col s112 m12 l12 center">
-                        
-                        <img class="responsive-img circle" src="{% static 'Team/ananya.jpg'%}">
-                        <h5 class="white-text">Ananya Shrivastav</h5>
-                        <h6 class="white-text">Sponsorship</h6>
-                        <p class="white-text">Contact: 7587364524</p>
-                        <a class="white-text" href="mailto:ananya15101@iiitnr.edu.in"><i class="material-icons">email</i></a>
                     </div>
                 </div>
             </div>
