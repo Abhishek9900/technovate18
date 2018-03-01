@@ -66,10 +66,50 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    {% if request.user.is_authenticated %}
-    {% else %}
+    <script>
+        $(document).ready(function(){
+             $(".button-collapse").sideNav();
+       });
+       $(document).ready(function(){
+          $('#joinID').click(function(){
+            $('.button-collapse').sideNav('hide');
+          });
+       });
+         $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+          $('.modal-trigger').leanModal();
+      });
+        $(document).ready(function() {
+      $('select').material_select();
+    });
+
+      $(document).ready(function(){
+          $('.carousel.carousel-slider').carousel({full_width: true});
+      });
+      $(document).ready(function(){
+          $('.carousel').carousel();
+      });
+      $(document).ready(function(){
+           $('fixed-action-btn').openFAB();
+      });
+      $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+      });
+    $('.close').click(function(){
+          $('#accomodation-details').hide("slow");
+          $('#privacy-disclaimer').hide("slow");
+          $('#tevents').show("slow");
+          $('#sponsors').hide("slow");
+          $('#title').hide("slow");
+          $('#aboutus').hide("slow");
+          $('.button-collapse').sideNav('hide');
+          $('#tech-team').hide("slow");
+          $('#workshop').hide("slow");
+          $('#GameZone').hide("slow");
+
+        });
+    </script>
      <script src="{% static 'technovate.js'%}"></script>
-     {% endif%}
      <style type="text/css">
        #iiitnr{
         height: auto;
@@ -124,46 +164,23 @@
         <ul class="right hide-on-med-and-down">
           <li><a class="homelink" href="{% url 'index' %}">HOME</a></li>
           <li><a class="techeventslink" href="{% url 'events' %}">EVENTS</a></li>
-          <li><a class="gameZone">GAMEZONE</a></li>
-          <li><a class="workshoplink" href="#">WORKSHOP</a>
-          <li><a class="teamlink" href="#">OUR TEAM</a></li>
-          <li><a class="sponsorslink" href="#">SPONSORS</a></li>
-          <li><a class="accomodation" href="#">HOSPITALITY</a></li>
-          <li><a class="celeb"  href="#">CELEB NIGHT</a></li>
-          <li><a class="aboutlink" href="#">ABOUT US</a></li>
           {% if request.user.is_authenticated %}
             <li><a class="dashboardlink" href="{% url 'interface' %}">DASHBOARD</a></li>
             <li><a href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i></a></li>
-            {% else %}
-           <li><a class="modal-trigger" href="{% url 'sign_up' %}">REGISTER</a></li>
-            <li><a class="modal-trigger" href="{% url 'sign_in' %}">LOGIN</a></li>
-          <li><a class="modal-trigger" href="#modal2">CAMPUS AMBASSADOR</a></li>
           {% endif %}
         </ul>
         </div>
     </nav>
-    <ul id="slide-out" class="side-nav">
-        <li class="logo"><a href="#" class="indexlink brand-logo">
-          <img src="{% static 'TECHNOVATE_beta.png'%}">
+    <ul id="mobile-demo" class="side-nav">
+      <li class="logo"><a href="#" class="indexlink brand-logo">
+          <img src="{% static 'close.png'%}">
         </a></li><br><br><li><div class="divider"></div></li>
         <li><a href="#" class="homelink"><i class="material-icons">home</i>HOME</a></li>
         <li><a class="techeventslink"><i class="material-icons">event</i>EVENTS</a></li>
-        <li><a class="gameZone"><i class="material-icons">videogame_asset</i>GAMEZONE</a></li>
-        <!--<li><a class="workshoplink" href="#"><i class="fa fa-cogs" aria-hidden="true"></i>WORKSHOP</a></li>-->
-        <li><a href="#" class="sponsorslink"><i class="material-icons">monetization_on</i>SPONSORS</a></li>
-        <li><a href="#" class="teamlink"><i class="material-icons">supervisor_account</i>
-OUR TEAM</a></li>
-        <li>
           {% if request.user.is_authenticated %}
+        <li><a class="dashboardlink" href="{% url 'interface' %}"><i class="material-icons">dashboard</i>DASHBOARD</a></li>
           <li><a href="{% url 'logout' %}"><i class="material-icons ">power_settings_new</i>LOGOUT</a></li>
-          {% else %}
-          <a class="modal-trigger" id="joinID" href="{% url 'join'%}"><i class="material-icons">account_circle</i>REGISTER/LOGIN</a></li>
-          <li><a class="modal-trigger" href="#modal2"><i class="fa fa-user-o"></i>CAMPUS AMBASSADOR</a></li>
           {% endif %}
-          <li><a href="#" class="accomodation"><i class="material-icons">local_hotel</i>Hospitality</a></li>
-          <li><a  target="_blank" href="https://www.google.com/maps/dir/Current+Location/IIIT-NR"><i class="material-icons">directions</i>REACH US</a></li>
-          <li><a  href="#" class="aboutlink"><i class="material-icons">info_outline</i>ABOUT US</a></li>
-          <li><a href="#" class="privacy-policy"><i class="material-icons">import_contacts</i>PRIVACY</a></li>
         </ul>
   </div>
  
