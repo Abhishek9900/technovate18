@@ -13,7 +13,7 @@ class ProfileResource(resources.ModelResource):
 class MemberResource(resources.ModelResource):
     class Meta:
         model = Member
-        fields = ('id', 'profile', 'name', 'email', 'institute', 'accomodation')
+        fields = ('id', 'profile', 'name', 'email', 'institute', 'accomodation', 'event')
     
     
 class ProfileAdmin(ImportExportModelAdmin):
