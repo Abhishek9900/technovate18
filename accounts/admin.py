@@ -13,7 +13,7 @@ class ProfileResource(resources.ModelResource):
 class MemberResource(resources.ModelResource):
     class Meta:
         model = Member
-        fields = ('id', 'profile', 'name', 'email', 'institute', 'accomodation', 'event')
+        fields = ('id', 'profile', 'name', 'email', 'institute', 'celeb', 'accomodation', 'event')
     
     
 class ProfileAdmin(ImportExportModelAdmin):
@@ -24,8 +24,8 @@ class ProfileAdmin(ImportExportModelAdmin):
     
 class MemberAdmin(ImportExportModelAdmin):
     resource_class = MemberResource
-    list_display = ('profile', 'name', 'email', 'institute', 'accomodation')
-    list_filter = ('profile__user', 'name', 'email', 'institute', 'accomodation')
+    list_display = ('profile', 'name', 'email', 'institute', 'accomodation', 'event')
+    list_filter = ('profile__user', 'name', 'email', 'institute','celeb', 'accomodation')
     search_fields = ['event', 'institute']
 
 admin.site.register(Profile, ProfileAdmin)

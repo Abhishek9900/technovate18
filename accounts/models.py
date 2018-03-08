@@ -39,8 +39,9 @@ class Member(models.Model):
     mobile = PhoneNumberField()
     institute = models.CharField(max_length=500)
     event = models.CharField(max_length=1000)
+    celeb = models.BooleanField(default=False)
     accomodation = models.BooleanField(default=False)
-    total = models.IntegerField(default=250)
+    total = models.IntegerField(default=150)
     
     def __str__(self):
         return self.name + ' - ' + str(self.mobile) + ' - ' + self.institute

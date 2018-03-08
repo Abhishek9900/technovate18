@@ -22,11 +22,12 @@ class MemberForm(forms.ModelForm):
         super(MemberForm, self).__init__(*args, **kwargs)
         self.fields['total'].widget.attrs['readonly'] = True
         self.fields['event'].widget.attrs['multiple'] = True
-        self.fields['accomodation'].label = "Click here to get accomodation"
+        self.fields['accomodation'].label = "Click here to get accomodation and celeb pass"
+        self.fields['celeb'].label = "Click here for celeb pass"
    
     class Meta:
         model = Member
-        fields = ('name', 'email', 'mobile', 'institute', 'event', 'accomodation', 'total')
+        fields = ('name', 'email', 'mobile', 'institute', 'event', 'celeb', 'accomodation', 'total')
         
     def save(self, profile, commit=True):
         member = super(MemberForm, self).save(commit=False)
